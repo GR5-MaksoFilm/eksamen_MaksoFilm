@@ -1,0 +1,14 @@
+body {
+  min-height: 100svh;
+}
+main,
+header > nav,
+footer > * {
+  width: 100%;
+  /* max-width: 1120px; */
+  margin-inline: auto;
+}
+
+main {
+  padding-inline: 2rem;
+}
