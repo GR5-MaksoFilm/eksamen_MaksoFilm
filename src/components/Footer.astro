@@ -1,0 +1,51 @@
+<footer>
+  <div class="footer">
+    <div class="footer_left">
+      <img src="../src/assets/img/maksofilm_logo.png" alt="maksofilm_logo" />
+    </div>
+    <div class="footer_center">
+      <p>Send mig en besked!</p>
+      <button class="arrow-button">→</button>
+    </div>
+    <div class="footer_right">
+      <img class="logo" src="../src/assets/img/instareal.svg" alt="instagram" />
+      <img class="logo" src="../src/assets/img/LI-In-Bug.png" alt="" />
+    </div>
+  </div>
+</footer>
+<style>
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(to top, var(--secondary-color), transparent);
+  }
+  .footer_right {
+    display: flex;
+    gap: 20px;
+  }
+  .footer_center {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .logo {
+    width: 50px;
+    height: 50px;
+  }
+  p {
+    font-family: "Manrope";
+  }
+
+  .arrow-button {
+    padding: 5px 30px;
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    font-family: "Manrope", sans-serif;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+</style>
