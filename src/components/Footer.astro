@@ -16,61 +16,72 @@
 <style>
   .footer {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
+    text-align: center;
+    gap: 20px;
     padding: 20px;
     background: linear-gradient(to top, var(--secondary-color), transparent);
   }
+
+  .footer_left {
+    width: 100%;
+  }
+
+  .footer_center {
+    display: none;
+  }
+
   .footer_right {
     display: flex;
+    flex-direction: row;
+    justify-content: center;
     gap: 20px;
-  }
-  .footer_center {
-    display: flex;
-    gap: 10px;
-    align-items: center;
   }
 
   .logo {
-    width: 50px;
-    height: 50px;
-  }
-  p {
-    font-family: "Manrope";
+    width: 150px;
+    height: 150px;
   }
 
-  .arrow-button {
-    padding: 5px 30px;
-    background-color: transparent;
-    border: 2px solid var(--primary-color);
-    color: var(--primary-color);
-    font-family: "Manrope", sans-serif;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-
-  @media (max-width: 768px) {
-    .footer_center {
-      display: none;
-    }
+  @media (min-width: 768px) {
     .footer {
-      flex-direction: column;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
       align-items: center;
-      text-align: center;
-      gap: 20px;
-    }
-
-    .footer_left {
-      width: 100%;
+      padding: 20px;
+      background: linear-gradient(to top, var(--secondary-color), transparent);
     }
     .footer_right {
-      flex-direction: row;
-      justify-content: center;
+      display: flex;
       gap: 20px;
     }
+    .footer_left {
+      width: auto;
+    }
+    .footer_center {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
     .logo {
-      width: 150px;
-      height: 150px;
+      width: 50px;
+      height: 50px;
+    }
+    p {
+      font-family: "Manrope";
+    }
+
+    .arrow-button {
+      padding: 5px 30px;
+      background-color: transparent;
+      border: 2px solid var(--primary-color);
+      color: var(--primary-color);
+      font-family: "Manrope", sans-serif;
+      border-radius: 5px;
+      cursor: pointer;
     }
   }
 </style>
