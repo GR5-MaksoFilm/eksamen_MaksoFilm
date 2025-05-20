@@ -32,8 +32,7 @@ p{
     font-size: 1rem;
 }
 
-nav>ul>li{
-    color: var(--primary-color);
-    font-family: "Manrope", sans-serif;
-    font-weight: 600;
+
+body{
+    background-color: var(--background-color)
 }
