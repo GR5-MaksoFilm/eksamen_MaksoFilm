@@ -1,0 +1,48 @@
+---
+//@ts-nocheck
+import CardSingle from "../../components/CardSingle.astro";
+
+// ⚙️ Static Site Generation Setup
+export async function getStaticPaths() {
+  const url =
+    "https://uhcutojnbibslmplbwqd.supabase.co/rest/v1/Portfolio?select=project_slug";
+  const key =
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVoY3V0b2puYmlic2xtcGxid3FkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDc3Mjc5NTcsImV4cCI6MjA2MzMwMzk1N30.gUKjETMs5zvXh4Hhw059erhs-V19eoJSiUCNXidk-V0";
+
+  const res = await fetch(url, {
+    headers: {
+      apikey: key,
+      Authorization: `Bearer ${key}`,
+    },
+  });
+
+  const data = await res.json();
+
+  return data.map((item) => ({
+    params: { slug: item.project_slug },
+  }));
+}
+
+const { slug } = Astro.params;
+
+const fetchUrl = `https://uhcutojnbibslmplbwqd.supabase.co/rest/v1/Portfolio?project_slug=eq.${slug}&select=*`;
+const key =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVoY3V0b2puYmlic2xtcGxid3FkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDc3Mjc5NTcsImV4cCI6MjA2MzMwMzk1N30.gUKjETMs5zvXh4Hhw059erhs-V19eoJSiUCNXidk-V0";
+
+const res = await fetch(fetchUrl, {
+  headers: {
+    apikey: key,
+    Authorization: `Bearer ${key}`,
+  },
+});
+const data = await res.json();
+const project = data[0];
+---
+
+{
+  project ? (
+    <CardSingle project={project} />
+  ) : (
+    <h1>Project not found: {slug}</h1>
+  )
+}

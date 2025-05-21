@@ -1,0 +1,9 @@
+---
+const { project } = Astro.props;
+---
+
+<div class="info-container">
+  <h2>{project.project_title}</h2>
+  <p>{project.project_category}</p>
+  <img src={project.project_photo} alt={project.project_title} />
+</div>

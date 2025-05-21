@@ -31,13 +31,15 @@ const sortedYears = Object.keys(groupedByYear).sort((a, b) => b - a);
       <section class="year-group">
         <h3 class="year-label">{year}</h3>
         {groupedByYear[year].map((item) => (
-          <article class="card">
-            <img src={item.project_photo} alt={item.project_title} />
-            <div class="card-text">
-              <h2 class="card-title">{item.project_title}</h2>
-              <p class="card-subtitle">{item.project_category}</p>
-            </div>
-          </article>
+          <a href={`/portfolio/${item.project_slug}`} class="card-link">
+            <article class="card">
+              <img src={item.project_photo} alt={item.project_title} />
+              <div class="card-text">
+                <h2 class="card-title">{item.project_title}</h2>
+                <p class="card-subtitle">{item.project_category}</p>
+              </div>
+            </article>
+          </a>
         ))}
       </section>
     ))
