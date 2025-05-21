@@ -1,8 +1,8 @@
 ---
-//@ts-nocheck
+// @ts-nocheck
 import CardSingle from "../../components/CardSingle.astro";
 
-// ⚙️ Static Site Generation Setup
+// ✅ Step 1: Generate static paths (cleaned)
 export async function getStaticPaths() {
   const url =
     "https://uhcutojnbibslmplbwqd.supabase.co/rest/v1/Portfolio?select=project_slug";
@@ -18,11 +18,16 @@ export async function getStaticPaths() {
 
   const data = await res.json();
 
-  return data.map((item) => ({
-    params: { slug: item.project_slug },
+  // 🧼 Clean up any line breaks or extra spaces in slugs
+  const slugs = data.map((item) => item.project_slug.trim());
+  console.log("✅ Clean slugs:", slugs);
+
+  return slugs.map((slug) => ({
+    params: { slug },
   }));
 }
 
+// ✅ Step 2: Get the actual slug
 const { slug } = Astro.params;
 
 const fetchUrl = `https://uhcutojnbibslmplbwqd.supabase.co/rest/v1/Portfolio?project_slug=eq.${slug}&select=*`;
@@ -43,6 +48,6 @@ const project = data[0];
   project ? (
     <CardSingle project={project} />
   ) : (
-    <h1>Project not found: {slug}</h1>
+    <h1>🚫 Project not found: {slug}</h1>
   )
 }
