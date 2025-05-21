@@ -1,0 +1,57 @@
+<div class="hero">
+  <div class="underlay">
+    <img src="../src/assets/img/glow.png" alt="glow" />
+  </div>
+  <iframe
+    class="video"
+    title="vimeo-player"
+    src="https://player.vimeo.com/video/419927692?h=94d7a56c67"
+    allow="autoplay; fullscreen"
+    allowfullscreen
+    frameborder="0"
+  >
+  </iframe>
+</div>
+
+<style>
+  .hero {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 12 / 9;
+  }
+
+  .video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    border: 0;
+  }
+
+  .underlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 120%;
+    height: 120%;
+    transform: translate(-10%, -10%);
+    z-index: 0;
+    pointer-events: none;
+    filter: blur(8px);
+  }
+
+  .underlay img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @media (min-width: 768px) {
+    .hero {
+      max-width: 800px; /* fx max bredde for desktop */
+      margin: 0 auto;
+    }
+  }
+</style>
