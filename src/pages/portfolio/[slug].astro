@@ -2,7 +2,7 @@
 // @ts-nocheck
 import CardSingle from "../../components/CardSingle.astro";
 
-// ✅ Step 1: Generate static paths (cleaned)
+// ✅ 1. Generate static paths from Supabase
 export async function getStaticPaths() {
   const url =
     "https://uhcutojnbibslmplbwqd.supabase.co/rest/v1/Portfolio?select=project_slug";
@@ -18,19 +18,20 @@ export async function getStaticPaths() {
 
   const data = await res.json();
 
-  // 🧼 Clean up any line breaks or extra spaces in slugs
   const slugs = data.map((item) => item.project_slug.trim());
-  console.log("✅ Clean slugs:", slugs);
+  console.log("✅ Static slugs generated:", slugs);
 
   return slugs.map((slug) => ({
     params: { slug },
   }));
 }
 
-// ✅ Step 2: Get the actual slug
-const { slug } = Astro.params;
+// ✅ 2. Get project by current slug
+const { slug: rawSlug } = Astro.params;
+const slug = rawSlug.trim();
 
 const fetchUrl = `https://uhcutojnbibslmplbwqd.supabase.co/rest/v1/Portfolio?project_slug=eq.${slug}&select=*`;
+
 const key =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVoY3V0b2puYmlic2xtcGxid3FkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDc3Mjc5NTcsImV4cCI6MjA2MzMwMzk1N30.gUKjETMs5zvXh4Hhw059erhs-V19eoJSiUCNXidk-V0";
 
@@ -41,6 +42,9 @@ const res = await fetch(fetchUrl, {
   },
 });
 const data = await res.json();
+
+console.log("📦 Project fetch result for slug:", slug, data); // ✅ Debug fetch result
+
 const project = data[0];
 ---
 
@@ -48,6 +52,6 @@ const project = data[0];
   project ? (
     <CardSingle project={project} />
   ) : (
-    <h1>🚫 Project not found: {slug}</h1>
+    <h1>Project not found: {slug}</h1>
   )
 }
