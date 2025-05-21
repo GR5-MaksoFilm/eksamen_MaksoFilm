@@ -1,6 +1,8 @@
 ---
 // @ts-nocheck
 import CardSingle from "../../components/CardSingle.astro";
+import Footer from "../../components/Footer.astro";
+import MainLayout from "../../layouts/MainLayout.astro";
 
 // ✅ 1. Generate static paths from Supabase
 export async function getStaticPaths() {
@@ -48,10 +50,7 @@ console.log("📦 Project fetch result for slug:", slug, data); // ✅ Debug fet
 const project = data[0];
 ---
 
-{
-  project ? (
-    <CardSingle project={project} />
-  ) : (
-    <h1>Project not found: {slug}</h1>
-  )
-}
+<MainLayout>
+  <CardSingle project={project} />
+  <Footer />
+</MainLayout>
