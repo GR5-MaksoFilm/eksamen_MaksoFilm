@@ -1,0 +1,115 @@
+<form class="formular">
+  <input id="navn" name="navn_text" type="text" placeholder="Navn" />
+  <input id="email" name="email" type="email" placeholder="Email" />
+  <input id="tlf" name="tlf" type="tel" placeholder="Telefon" />
+  <select class="custom-select">
+    <option value="" disabled selected hidden>Jeg er interesseret i...</option>
+    <option value="Filmoptagelse">Filmoptagelse</option>
+    <option value="Podcast">Podcast</option>
+    <option value="Droneoptagelse">Droneoptagelse</option>
+    <option value="Redigering">Redigering</option>
+    <option value="Andet">Andet</option>
+  </select>
+  <label for="besked">Fortæl lidt mere om dit projekt...</label>
+  <textarea id="besked" name="besked"></textarea>
+  <button class="knap underline-animation">Send</button>
+</form>
+
+<style>
+  body,
+  main {
+    margin: 0;
+    padding: 0;
+  }
+  .formular {
+    background-color: rgba(147, 125, 166, 1);
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+    font-family: "Manrope", sans-serif;
+    max-width: 500px;
+    padding: 2.5rem;
+  }
+
+  .formular input::placeholder,
+  .formular textarea::placeholder {
+    font-family: "Manrope", sans-serif;
+    color: black;
+  }
+
+  .formular input,
+  .formular textarea {
+    background: none;
+    border: none;
+    box-shadow: none;
+    font-size: 1.1rem;
+    border-bottom: 2px solid var(--secondary-color);
+  }
+
+  .formular input:focus,
+  .formular textarea:focus {
+    outline: none;
+    box-shadow: none;
+  }
+  .custom-select {
+    background: none;
+    font-size: 1rem;
+    padding-bottom: 0.8rem;
+    font-family: "Manrope", sans-serif;
+    font-size: 1rem;
+    border: none;
+
+    border-bottom: 2px solid var(--secondary-color);
+  }
+  .custom-select:focus {
+    outline: none;
+    box-shadow: none;
+    border-bottom: 2px solid var(--secondary-color);
+  }
+  .knap {
+    background-color: var(--secondary-color);
+    border: none;
+    cursor: pointer;
+    padding: 1rem;
+    font-family: "Manrope", sans-serif;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin: auto;
+    padding: 0.2rem 3rem 0.2rem 3rem;
+  }
+
+  .knap {
+    background-color: var(--secondary-color);
+    border: none;
+    cursor: pointer;
+    padding: 1rem;
+    font-family: "Manrope", sans-serif;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin: auto;
+    padding: 0.2rem 3rem 0.2rem 3rem;
+  }
+
+  .underline-animation {
+    position: relative;
+    display: inline-block;
+  }
+
+  .underline-animation:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary-color);
+    transform-origin: bottom center;
+    transition: transform 0.25s ease-out;
+  }
+
+  .underline-animation:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom center;
+  }
+</style>
