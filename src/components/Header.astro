@@ -5,12 +5,12 @@ import Logo from '../assets/MaksoFilm_logo.svg';
 
 <nav>
     <div class="spacer"></div>
-    <ul id="menu_1">
+    <ul class="menu first">
         <li class="fill-animation"><a href="" class="underline-animation">Om</a></li>
         <li class="fill-animation"><a href="" class="underline-animation">Portfolio</a></li>
     </ul>
         <a href="index.astro"><Logo class="logo"/></a>
-    <ul id="menu_2">
+    <ul class="menu second">
         <li class="fill-animation"><a href="" class="underline-animation">Services</a></li>
         <li class="fill-animation"><a href="" class="underline-animation">Kontakt</a></li>
     </ul>
@@ -56,26 +56,7 @@ import Logo from '../assets/MaksoFilm_logo.svg';
     display: inline-block;
     position: relative;
     }
-    
-.underline-animation:after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  transform: scaleX(0);
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: var(--primary-color);
-  transform-origin: bottom center;
-  transition: transform 0.25s ease-out;
-}
-
-.underline-animation:hover:after {
-  transform: scaleX(1);
-  transform-origin: bottom center;
-}
-
-#burger{
+    #burger{
     width: 30px;
     height: 30px;
     border-radius: 5px;
@@ -83,66 +64,85 @@ import Logo from '../assets/MaksoFilm_logo.svg';
     cursor: pointer;
 }
 
-.spacer{
+    .spacer{
     width: 30px;
     height: 30px;
-}
+    }
     span{
-        display: block;
-        position: relative;
-        background-color: var(--primary-color);
-        width: 100%;
-        height: 4px;
-        border-radius: 3px;
-        margin-bottom: 5px;
-        z-index: 1;
-        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-                  opacity 0.55s ease;
+    display: block;
+    position: relative;
+    background-color: var(--primary-color);
+    width: 100%;
+    height: 4px;
+    border-radius: 3px;
+    margin-bottom: 5px;
+    z-index: 1;
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                opacity 0.55s ease;
     }
 
     #burger, .spacer{
-        display: none;
+    display: none;
+    }
+
+    @media screen and (min-width: 975px) {
+        .underline-animation:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: var(--primary-color);
+        transform-origin: bottom center;
+        transition: transform 0.25s ease-out;
+        }
+    
+        .underline-animation:hover:after {
+        transform: scaleX(1);
+        transform-origin: bottom center;
+        }
     }
 
 
-@media screen and (max-width: 975px) {
-  #menu_1, #menu_2{
+    @media screen and (max-width: 975px) {
+    .menu{
     display: none;}
 
-  #burger, .spacer{
+    #burger, .spacer{
     display: block;
-  }
+    }
 
-  nav{
+    nav{
     justify-content: space-between;
-  }
+    }
 
-nav>#burger.active span:nth-child(1){
+    nav>#burger.active span:nth-child(1){
     transform: rotate(45deg) translate(0, -1px);
-}
+    }
 
-nav>#burger span:nth-child(1){
+    nav>#burger span:nth-child(1){
     transform-origin: 0% 0%;
-}
-nav>#burger.active span:nth-child(2){
+    }
+    nav>#burger.active span:nth-child(2){
     opacity: 0;
     transition: opacity 0.25s ease;
+    }
 
-}
-
-nav>#burger span:nth-child(2){
+    nav>#burger span:nth-child(2){
     opacity: 1;
     transition: opacity 0.55s ease-in;
-}
+    }
 
-nav>#burger.active span:nth-child(3){
+    nav>#burger.active span:nth-child(3){
     transform: rotate(-45deg) translate(0, 1px);
-}
-nav>#burger span:nth-child(3){
+    }
+    nav>#burger span:nth-child(3){
     transform-origin: 0% 100%;
-}
+    }
 
- nav.active #menu_1{
+     nav.active .menu.first{
     display: block;
     position: absolute;
     background-color: var(--primary-color);
@@ -152,8 +152,8 @@ nav>#burger span:nth-child(3){
     box-shadow: 0 10px 10px var(--secondary-color);
     z-index: 1;
     text-align: right;
-}
-nav.active #menu_2{
+    }
+    nav.active .menu.second{
     display: block;
     position: absolute;
     background-color: var(--primary-color);
@@ -163,54 +163,48 @@ nav.active #menu_2{
     box-shadow: 0 10px 10px var(--secondary-color);
     z-index: 1;
      text-align: right;
-}
-#menu_1 a, #menu_2 a{
+    }
+    nav.active .fill-animation>a{
     color: var(--background-color);
-    margin-right: 10px;
+    padding-right: 10px;
     font-size: 1.5rem;
-}
-
-.fill-animation:hover{
-    animation-name: fill;
-    animation-duration: 0.25s;
-}
-@keyframes fill {
-    0% {
-        background-color: var(--primary-color);
+    display: block;
+    width: 100%;
     }
-    100% {
-        background-color: var(--secondary-color);
+
+    .fill-animation{
+    background: linear-gradient(90deg, var(--secondary-color) 50%, var(--primary-color) 50%);
+    background-position: -100%;
+    background-size: 200% 100%;
+    transition: background-position .3s ease-in;
+    animation-direction: alternate;
     }
-}
 
-/* .fill-animation:after{
-    content: '';
-    position: absolute;
-    width: 100em;
-    transform: scaleX(0);
-    height: 100%;
-    bottom: 0;
-    left: 0;
-    transform-origin: right;
-    background-color: var(--secondary-color);
-    transition: transform 0.25s ease-out;
-    
-}
+    .fill-animation:hover{
+    background-position: 0;
+    }
+    nav.active .fill-animation>a{
+    color: transparent;
+    background-image: linear-gradient(90deg, var(--primary-color) 50%, var(--background-color) 50%);
+    background-position:-100%;
+    background-size:200% 100%;
+    background-clip:text;
+    -webkit-background-clip:text;
+    transition: background-position .3s ease-in;
+    animation-direction: alternate;
+    } 
+    nav.active .fill-animation:hover>a{
+    background-position: 0;
+    }
 
-.fill-animation:hover:after{
-    transform: scaleX(1);
-    transform-origin: right;
-    a{color: var(--primary-color);}
-} */
-
-}
+    }
 </style>
 
 <script>
     
-    const burger = document.querySelector("#burger ");
-    const nav = document.querySelector("nav ");
-    var menu = document.querySelectorAll("#menu_1, #menu_2 ");
+    const burger = document.querySelector("#burger");
+    const nav = document.querySelector("nav");
+    var menu = document.querySelectorAll(".menu");
 
     burger.addEventListener("click", burgerClick);
     function burgerClick() {
