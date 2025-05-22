@@ -5,7 +5,7 @@
     </div>
     <div class="footer_center">
       <p>Send mig en besked!</p>
-      <button class="arrow-button">→</button>
+      <a href="/kontakt" class="arrow-button">→</a>
     </div>
     <div class="footer_right">
       <img class="logo" src="../src/assets/img/instareal.svg" alt="instagram" />
@@ -73,9 +73,17 @@
     p {
       font-family: "Manrope";
     }
+    a {
+      text-decoration: none;
+    }
+    p:hover,
+    a:hover {
+      scale: 1.05;
+      background-color: rgba(147, 125, 166, 1);
+    }
 
     .arrow-button {
-      padding: 5px 30px;
+      padding: 5px 35px;
       background-color: transparent;
       border: 2px solid var(--primary-color);
       color: var(--primary-color);
