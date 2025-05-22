@@ -3,6 +3,7 @@
 import CardSingle from "../../components/CardSingle.astro";
 import Footer from "../../components/Footer.astro";
 import MainLayout from "../../layouts/MainLayout.astro";
+import ButtonBack from "../../components/ButtonBack.astro";
 
 // ✅ 1. Generate static paths from Supabase
 export async function getStaticPaths() {
@@ -51,5 +52,6 @@ const project = data[0];
 ---
 
 <MainLayout>
+  <ButtonBack />
   <CardSingle project={project} />
 </MainLayout>

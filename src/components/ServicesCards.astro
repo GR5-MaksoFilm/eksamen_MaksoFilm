@@ -1,0 +1,79 @@
+---
+const services = [
+  {
+    title: "Filmproduktion",
+    description:
+      "Skab professionelle videoer, der engagerer og imponerer. Vi hjælper dig hele vejen.",
+  },
+  {
+    title: "Videooptagelser",
+    description:
+      "Få din video filmet, klippet og mastereret, så den er klar til lige den platform du ønsker.",
+  },
+  {
+    title: "Podcast",
+    description:
+      "Få optaget din podcast med eller uden billede. Jeg har udstyret og viden til at få dig i mål.",
+  },
+  {
+    title: "Livestream",
+    description:
+      "Jeg kan lave et fuldt flerkamera livestreamsetup, så du kan komme ud til dine kunder.",
+  },
+];
+---
+
+<style>
+  .card-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .card {
+    width: 300px;
+    height: 160px;
+    padding: 1rem;
+    color: var(--primary-color);
+    border: 2px solid var(--secondary-color);
+    border-radius: 8px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: sans-serif;
+    transition:
+      box-shadow 0.3s ease,
+      transform 0.3s ease;
+  }
+
+  .card:hover {
+    box-shadow:
+      0 0 12px var(--primary-color),
+      0 0 24px var(--primary-color);
+    transform: translateY(-4px);
+  }
+
+  .card h2 {
+    font-size: 1.8rem;
+    font-weight: 300;
+    margin: 0;
+    text-decoration: underline;
+  }
+
+  .card p {
+    margin: 0.5rem 0 0;
+    line-height: 1.4;
+  }
+</style>
+
+<div class="card-container">
+  {
+    services.map((service) => (
+      <div class="card">
+        <h2>{service.title}</h2>
+        <p>{service.description}</p>
+      </div>
+    ))
+  }
+</div>
