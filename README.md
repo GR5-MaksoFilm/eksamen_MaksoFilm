@@ -13,7 +13,7 @@ Der arbejdes i Astro og derfor bruger vi også Astros egen filstruktur med vores
 •	Filer der hører specifikt til bestemte sider navngives også som ovenfor med ”filfunktion_side.filtype”
 
 ## Link til scripts:
-•	Eventuelle scripts placeres i <head> med defer attribute
+•	Eventuelle scripts placeres i bunden af dets respektive component eller page
 
 ## Git branches:
 •	Branchens navngives som følgende eksempel ”feature_navn"
