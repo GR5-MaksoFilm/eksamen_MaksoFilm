@@ -6,7 +6,41 @@ import Hero from "../components/Hero.astro";
 ---
 
 <MainLayout>
+  <h1>MAKSOFILM</h1>
+  <p class="bold">Din professionelle videopartner</p>
   <Hero />
+  <h2>HVEM ER MAKSOFILM?</h2>
+  <div class="grid_1_1">
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam.
+    </p>
+    <img src="src/assets/img/profilbillede.webp" alt="" />
+  </div>
   <ButtonPortfolio tekst="Se mit Portfolio" url="" />
   <ButtonBack />
 </MainLayout>
+
+<style>
+  h1 {
+    text-align: center;
+  }
+
+  .bold {
+    font-weight: bold;
+    text-align: center;
+    font-family: "Manrope";
+  }
+  p {
+    font-family: "Manrope";
+    gap: 10px;
+  }
+  .grid_1_1 {
+    gap: 10px;
+  }
+  img {
+    border: 3px solid var(--primary-color);
+    gap: 10px;
+  }
+</style>

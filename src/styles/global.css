@@ -1,38 +1,39 @@
 @import "reset.css";
 @import "layout.css";
 
-*{
-    --primary-color: #FFE8BD;
-    --secondary-color: #473953;
-    --background-color: #222222;
-    --black-color: #141414;
-    --white-color: #fffafa;
+* {
+  --primary-color: #ffe8bd;
+  --secondary-color: #473953;
+  --background-color: #222222;
+  --black-color: #141414;
+  --white-color: #fffafa;
 }
 
-h1,h2,h3{
-    color: var(--primary-color);
-    font-family: "Manrope", sans-serif;
-    font-weight: 700;
+h1,
+h2,
+h3 {
+  color: var(--primary-color);
+  font-family: "Manrope", sans-serif;
+  font-weight: 700;
 }
 
-h1{
-    font-size: 4rem;
+h1 {
+  font-size: 3rem;
 }
-h2{
-    font-size: 3rem;
+h2 {
+  font-size: 2rem;
 }
-h3{
-    font-size: 2rem;
-}
-
-p{
-    color: var(--primary-color);
-    font-family: "Poltawski Nowy", sans-serif;
-    font-weight: 400;
-    font-size: 1rem;
+h3 {
+  font-size: 1rem;
 }
 
+p {
+  color: var(--primary-color);
+  font-family: "Poltawski Nowy", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+}
 
-body{
-    background-color: var(--background-color)
+body {
+  background-color: var(--background-color);
 }
