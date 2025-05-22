@@ -1,0 +1,36 @@
+---
+const { url } = Astro.props;
+---
+
+<a href=`${url}`>
+  <p>←</p>
+</a>
+
+<style>
+  a {
+    text-decoration: none;
+    background-color: var(--secondary-color);
+  }
+  p:hover,
+  a:hover {
+    scale: 1.05;
+    background-color: rgba(147, 125, 166, 1);
+  }
+  p {
+    margin: 2px;
+    color: var(--primary-color);
+    font-family: "Manrope";
+    border-radius: 5px;
+    width: fit-content;
+    padding: 5px 58px;
+    transition: 0.3s;
+    margin-top: 10px;
+    background-color: var(--secondary-color);
+  }
+
+  @media (max-width: 960px) {
+    p {
+      margin-bottom: 10px;
+    }
+  }
+</style>
