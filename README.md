@@ -1,47 +1,38 @@
-# Teknisk dokumentation for Tema 7 gruppeprojekt
-
-Når man er flere der bidrager til en kodebase, lærer man hurtigt, at ens sædvanlige måder at gøre tingene på ikke nødvendigvis er logisk for alle.
-
-Skriv derfor jeres fælles retningslinjer for punkterne herunder(tilføj gerne flere selv), sådan som det giver bedst mening for jer som gruppe. Dokumentationen sikre, at jeres fælles kodebase forbliver overskuelig, er let at arbejde med og til at forstå for alle, og at I undgå konflikter, og har nemmere ved at hjælpe hinanden undervejs.
+# Teknisk dokumentation for Gruppe 5 – 2. Semester eksamensprojekt
+Herunder er der dokumentation der fastsætter regler for hvordan projektet kodes så der er et fælles udgangspunkt i syntax og navngivning, for at holde koden ensartet og effektiv. Dette gør også problemløsning og det overordnede visuelle udtryk lettere at vedligeholde.
 
 ## Projektstruktur:
-
-Beslut, hvordan I vil organisere jeres projekt – struktur for mapper og filer.
-
-- Hvordan organiserer I billeder, fonte og andre ressourcer?
-- Hvor placerer I boilerplate?(fx CSS- og JavaScript-filer, der bruges på tværs af projektet)
-- Hvor placerer I HTML, CSS- og JavaScript-filer til fx detaljevisning og listevisning?
+Der arbejdes i Astro og derfor bruger vi også Astros egen filstruktur med vores egne tilføjede mapper og filer.
+•	Elementer der går igen bygges som components
+•	Fonte, farver og lignende laves som variables i global.css
+•	Billeder, video og andre tungere resourcer placeres i assets under src og importeres gennem Astro
 
 ## Navngivning:
-
-Beslutte hvordan i vil navngive filer og mapper for at sikre en ensartet struktur og undgå forvirring.
-
-- Hvordan navngiver I filnavne? (fx små bogstaver, ingen mellemrum, brug af - eller \_)
-- Hvordan sikre I at det er til at forstå hvilke HTML-, CSS- og JavaScript-filer der høre sammen?
+•	Alle filer og mapper navngives i lowercase, dog med undtagelse for Astro Layouts og Components
+•	Der bruges ingen mellemrum i navngivning, i stedet navngives filer som fx ”style_index.css” dette eksempel er for CSS specifikt til forsiden
+•	Filer der hører specifikt til bestemte sider navngives også som ovenfor med ”filfunktion_side.filtype”
 
 ## Link til scripts:
-
-- Hvor placerer I script referencer i HTML'en? (fx i <head> med defer attribute, eller sidst i <body>)
+•	Eventuelle scripts placeres i <head> med defer attribute
 
 ## Git branches:
-
-- Hvordan navngiver I branches, så alle kan forstår hvem der arbejder i branchen og på hvad?(fx feature-lotte-formular)
-
+•	Branchens navngives som følgende eksempel ”feature_navn"
+ 
 ## Arbejdsflow:
-
-- Hvordan fordeler I arbejdet, så I undgår at flere arbejder i de samme filer samtidigt?
-- Hvordan sikrer I, at commit-beskeder er beskrivende?
-- Hvordan kommunikerer i om ændringer i main branchen når feature merges?
+•	INGEN arbejder i main, medmindre det er aftalt på forhånd
+•	INGEN merger deres branch ind i main før det er godkendt
+•	Commit messages skal være beskrivende omkring hvad der er tilføjet og/eller fjernet, brug eventuelt CoPilot til at navngive commits
 
 ## Kode:
-
-- Hvordan skriver i funktioner i JavaScript?(fx med function keyword eller som arrow functions)
-- Beslut hvilken CSS selector i benyttes til referener i henholdsvis CSS og JavaScript(fx. id'er til JavaScript og Classes til CSS)
-- Skal filer have korte forklaringer som kommentarer?
+•	Eventuelle funktioner i JS laves som arrow functions
+•	Der bruges class selector til CSS af elementer der navngives ”klassens-funktion_beskrivelse” som fx ”grid_none-to-3” for et layout der går fra intet grid til column af 3
+•	Der bruges id selector til elementer der skal påvirkes af eventuel JS
 
 # Funktionalitet
+•	Der hentes data til portfolio gennem API til en database lavet med Supabase
+•	Dynamisk visning af enkelte elementer fra portfolio
 
-Dette afsnit skal forklare hvad I konkret har arbejde med, for at udvikle websitet. Tænk over hvilke interaktioner brugeren kan foretage på sitet? Eller hvordan websitet håndterer og præsenterer data? Eksempler på funktionalitet, der kan beskrives:
+Dette afsnit skal forklare hvad I konkret har arbejde med, for at udvikle websitet. Tænk over hvilke interaktioner brugeren kan foretage på sitet? Eller hvordan websitet håndterer og præsenterer data? Eksempler på funktionalitet, der kan beskrives:
 
 - Hentning af produkter fra API.
 - Filtrering af produkter baseret på brugerens valg.
@@ -49,6 +40,7 @@ Dette afsnit skal forklare hvad I konkret har arbejde med, for at udvikle websit
 
 Brug korte beskrivelser, som i eksemplerne herover
 
+/////////////////////////////////////////////////////////////////////////////////
 # API endpoints
 
 Dette afsnit skal liste de endpoints fra API'et i har benyttet:
@@ -57,7 +49,7 @@ Dette afsnit skal liste de endpoints fra API'et i har benyttet:
 
 # Dokumentation af Funktion
 
-Dette afsnit skal beskrive en funktion I selv har udviklet. Det kunne eksempelvis være en funktion der generere en listen over fx. produkter:
+Dette afsnit skal beskrive en funktion I selv har udviklet. Det kunne eksempelvis være en funktion der generere en listen over fx. produkter:
 
 - Beskrivelse: Hvad gør funktionen? Hvordan spiller den sammen med resten af koden?
 - Parametre: Hvilke input forventes (fx en værdi fra en dropdown eller URL'en)?
@@ -72,3 +64,5 @@ function voresFunktion(sprog) {
 //hvordan funktionen kaldes:
 voresFunktion("JavaScript");
 ```
+
+
