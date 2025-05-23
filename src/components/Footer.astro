@@ -1,15 +1,19 @@
 <footer>
   <div class="footer">
     <div class="footer_left">
-      <img src="../src/assets/img/maksofilm_logo.png" alt="maksofilm_logo" />
+      <img src="../src/assets/MaksoFilm_Logo.svg" alt="maksofilm_logo" />
     </div>
     <div class="footer_center">
       <p>Send mig en besked!</p>
       <a href="/kontakt" class="arrow-button">→</a>
     </div>
     <div class="footer_right">
-      <img class="logo" src="../src/assets/img/instareal.svg" alt="instagram" />
-      <img class="logo" src="../src/assets/img/LI-In-Bug.png" alt="" />
+      <img
+        class="logo1"
+        src="../src/assets/img/instareal.svg"
+        alt="instagram"
+      />
+      <img class="logo2" src="../src/assets/img/LI-In-Bug.png" alt="" />
     </div>
   </div>
 </footer>
@@ -39,9 +43,13 @@
     gap: 20px;
   }
 
-  .logo {
-    width: 150px;
-    height: 150px;
+  .logo1 {
+    max-width: 180px;
+    height: auto;
+  }
+  .logo2 {
+    max-width: 200px;
+    height: auto;
   }
 
   @media (min-width: 768px) {
@@ -58,7 +66,7 @@
       gap: 20px;
     }
     .footer_left {
-      width: auto;
+      width: 150px;
     }
     .footer_center {
       display: flex;
@@ -66,7 +74,8 @@
       align-items: center;
     }
 
-    .logo {
+    .logo1,
+    .logo2 {
       width: 50px;
       height: 50px;
     }
