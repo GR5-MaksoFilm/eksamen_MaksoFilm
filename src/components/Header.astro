@@ -1,57 +1,220 @@
 ---
-import Logo from '../assets/MaksoFilm_logo.svg';
+import Logo from "../assets/MaksoFilm_logo.svg";
 ---
 
 <nav>
-    <ul>
-        <li><a href="" class="underline-animation">Om</a></li>
-        <li><a href="" class="underline-animation">Portfolio</a></li>
-        <li><a href="index.astro"><Logo width={284} height={106}/></a></li>
-        <li><a href="" class="underline-animation">Services</a></li>
-        <li><a href="" class="underline-animation">Kontakt</a></li>
-    </ul>
+  <div class="spacer"></div>
+  <ul class="menu first">
+    <li class="fill-animation">
+      <a href="/" class="underline-animation">Om</a>
+    </li>
+    <li class="fill-animation">
+      <a href="../pages/portfolio.astro" class="underline-animation"
+        >Portfolio</a>
+    </li>
+  </ul>
+
+    <a href="../pages/index.astro"><Logo class="logo" /></a>
+
+  <ul class="menu second">
+    <li class="fill-animation">
+      <a href="../pages/services.astro" class="underline-animation">Services</a>
+    </li>
+    <li class="fill-animation">
+      <a href="../pages/kontakt.astro" class="underline-animation">Kontakt</a>
+    </li>
+  </ul>
+  <div id="burger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
 </nav>
 
 <style>
-    ul {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 1rem;
-        max-width: 80vw;
-        margin-inline: auto;
-    }
-    li {
-        list-style: none;
-    }
-    
-    nav>ul>li>a{
+  .logo {
+    width: 50vw;
+    max-width: 284px;
+    height: auto;
+  }
+  .menu {
+    display: flex;
+    justify-content: space-evenly;
+    width: 33cqw;
+  }
+  li {
+    list-style: none;
+  }
+
+  nav > ul > li > a {
     color: var(--primary-color);
     font-family: "Manrope", sans-serif;
     font-weight: 600;
-    text-decoration:none ;
+    text-decoration: none;
     font-size: 1.5rem;
-
     display: inline-block;
     position: relative;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 1rem;
+    margin-inline: auto;
+    gap: 2rem;
+  }
+
+  #burger {
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    align-content: center;
+    cursor: pointer;
+  }
+  .spacer {
+    width: 30px;
+    height: 30px;
+  }
+  span {
+    display: block;
+    position: relative;
+    background-color: var(--primary-color);
+    width: 100%;
+    height: 4px;
+    border-radius: 3px;
+    margin-bottom: 5px;
+    z-index: 1;
+    transition:
+      transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+      opacity 0.55s ease;
+  }
+
+  nav {
+    justify-content: space-between;
+  }
+
+  nav > #burger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(0, -1px);
+  }
+
+  nav > #burger span:nth-child(1) {
+    transform-origin: 0% 0%;
+  }
+  nav > #burger.active span:nth-child(2) {
+    opacity: 0;
+    transition: opacity 0.25s ease;
+  }
+
+  nav > #burger span:nth-child(2) {
+    opacity: 1;
+    transition: opacity 0.55s ease-in;
+  }
+
+  nav > #burger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(0, 1px);
+  }
+  nav > #burger span:nth-child(3) {
+    transform-origin: 0% 100%;
+  }
+
+  @media screen and (max-width: 975px) {
+    nav.active .menu.first {
+      display: block;
+      position: absolute;
+      background-color: var(--primary-color);
+      top: 94px;
+      right: 1rem;
+      width: 20%;
+      box-shadow: 0 10px 10px var(--secondary-color);
+      z-index: 1;
+      text-align: right;
     }
-    
-.underline-animation:after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  transform: scaleX(0);
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: var(--primary-color);
-  transform-origin: bottom center;
-  transition: transform 0.25s ease-out;
-}
+    nav.active .menu.second {
+      display: block;
+      position: absolute;
+      background-color: var(--primary-color);
+      top: 159px;
+      right: 1rem;
+      width: 20%;
+      box-shadow: 0 10px 10px var(--secondary-color);
+      z-index: 1;
+      text-align: right;
+    }
+    nav.active .fill-animation > a {
+      color: var(--background-color);
+      padding-right: 10px;
+      font-size: 1.5rem;
+      display: block;
+      width: 100%;
+    }
 
-.underline-animation:hover:after {
-  transform: scaleX(1);
-  transform-origin: bottom center;
-}
+    .fill-animation {
+      background: linear-gradient(
+        90deg,
+        var(--secondary-color) 50%,
+        var(--primary-color) 50%
+      );
+      background-position: -100%;
+      background-size: 200% 100%;
+      transition: background-position 0.3s ease-in;
+      animation-direction: alternate;
+    }
 
-    </style>
+    .fill-animation:hover {
+      background-position: 0;
+    }
+    nav.active .fill-animation > a {
+      color: transparent;
+      background-image: linear-gradient(
+        90deg,
+        var(--primary-color) 50%,
+        var(--background-color) 50%
+      );
+      background-position: -100%;
+      background-size: 200% 100%;
+      background-clip: text;
+      -webkit-background-clip: text;
+      transition: background-position 0.3s ease-in;
+      animation-direction: alternate;
+    }
+    nav.active .fill-animation:hover > a {
+      background-position: 0;
+    }
+
+    .menu {
+      display: none;
+    }
+
+    #burger,
+    .spacer {
+      display: block;
+    }
+  }
+
+  @media screen and (min-width: 975px) {
+    .underline-animation:after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0);
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: var(--primary-color);
+      transform-origin: bottom center;
+      transition: transform 0.25s ease-out;
+    }
+
+    .underline-animation:hover:after {
+      transform: scaleX(1);
+      transform-origin: bottom center;
+    }
+    #burger,
+    .spacer {
+      display: none;
+    }
+  }
+</style>
+
+<script src="../assets/js/burger.js"></script>
