@@ -7,8 +7,11 @@ const { project } = Astro.props;
   <div class="portfolio-center">
     <h1 class="portfolio-title">{project.project_title}</h1>
   </div>
+  <div class="portfolio-underline"></div>
+
   <h2>{project.project_category}</h2>
   <h3>{project.project_h3}</h3>
+
   <p>
     {
       project.project_description.split("\n").map((line, index) => (
@@ -19,6 +22,7 @@ const { project } = Astro.props;
       ))
     }
   </p>
+
   <div class="watch-button-wrapper">
     <a
       href={project.project_watch}
@@ -38,6 +42,10 @@ const { project } = Astro.props;
 </div>
 
 <style>
+  .info-container {
+    padding: 0 1rem;
+  }
+
   .portfolio-center {
     display: flex;
     justify-content: center;
@@ -45,19 +53,17 @@ const { project } = Astro.props;
   }
 
   .portfolio-title {
-    position: relative;
-    display: inline-block;
-    margin-bottom: 2rem;
+    margin-bottom: 0.5rem;
+    font-size: 3rem;
+    text-align: center;
   }
 
-  .portfolio-title::after {
-    content: "";
-    display: block;
+  .portfolio-underline {
+    align-self: center;
     height: 2px;
     background-color: white;
-    margin-top: 0.5rem;
-    width: 120%;
-    transform: translateX(-9%);
+    width: 100%;
+    margin-bottom: 2rem;
   }
 
   h3 {
@@ -69,6 +75,7 @@ const { project } = Astro.props;
   p {
     font-size: 1.2rem;
     margin-bottom: 2rem;
+    line-height: 1.6;
   }
 
   .watch-button-wrapper {
@@ -80,7 +87,7 @@ const { project } = Astro.props;
   .watch-button {
     font-size: 2rem;
     font-family: manrope;
-    position: relative; /* Needed for the ::after to position correctly */
+    position: relative;
     display: inline-block;
     color: var(--primary-color);
     text-decoration: none;
@@ -114,5 +121,16 @@ const { project } = Astro.props;
     margin-top: 1.5rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-bottom: 5rem;
+  }
+
+  @media (min-width: 768px) {
+    .info-container {
+      margin-left: 4rem;
+      margin-right: 4rem;
+    }
+
+    .portfolio-underline {
+      margin: 0 auto 2rem auto;
+    }
   }
 </style>
