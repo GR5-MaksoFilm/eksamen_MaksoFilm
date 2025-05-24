@@ -6,12 +6,38 @@ import "../styles/global.css";
 ---
 
 <MainLayout>
-  <Form />
+  <h1>Lad os samarbejde!</h1>
+  <div class="grid_1_1_kontakt">
+    <div class="left">
+      <h2>Generel henvendelse:</h2>
+      <h3>kontakt@maksofilm.dk</h3>
+      <h3>+45 00 00 00 00</h3>
+    </div>
+    <div class="right">
+      <Form />
+    </div>
+  </div>
 </MainLayout>
 
 <style>
+  /* fjerner margin og padding på hele kontakt siden, så formularen kan nå ud til siderne */
   :global(main) {
     margin: 0;
     padding: 0;
+  }
+  .grid_1_1_kontakt {
+    margin-bottom: 5rem;
+  }
+  h1 {
+    padding-left: 2rem;
+    margin-left: 3rem;
+    margin-bottom: 3rem;
+    margin-top: 3rem;
+
+    place-self: center;
+  }
+  .left {
+    place-self: center;
+    margin-bottom: 3rem;
   }
 </style>
