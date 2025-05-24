@@ -10,27 +10,39 @@ const { tekst, url } = Astro.props;
   a {
     text-decoration: none;
     background-color: var(--secondary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Fylder hele bredden på mobil */
+    margin: 10px auto;
+    padding: 0;
+    transition: 0.3s;
   }
-  p:hover,
+
   a:hover {
     scale: 1.05;
     background-color: rgba(147, 125, 166, 1);
   }
+
   p {
     margin: 2px;
-    color: var(--primary-color);
     font-family: "Manrope";
     border-radius: 5px;
-    width: fit-content;
-    padding: 5px 10px;
+    width: 100%;
+    padding: 6px 24px;
+    font-size: 20px;
+    text-align: center;
     transition: 0.3s;
-    margin-top: 10px;
-    background-color: var(--secondary-color);
   }
 
-  @media (max-width: 960px) {
+  @media (min-width: 768px) {
+    a {
+      width: fit-content;
+    }
+
     p {
-      margin-bottom: 10px;
+      font-size: 16px;
+      padding: 4px 16px;
     }
   }
 </style>

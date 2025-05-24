@@ -4,12 +4,69 @@ import ServicesCards from "../components/ServicesCards.astro";
 ---
 
 <MainLayout>
-  <h1>Services</h1>
-  <h3>Hvad tilbyder jeg? - Ekspertise til dig</h3>
-  <p>
-    Jeg har så og så mange års erfaring med blandt andet det her og det her
-    inden for faget, så har du brug for kyndige hænder til dit næste projekt så
-    tøv ikke med at tage fat i mig!
-  </p>
+  <div class="service-wrapper">
+    <div class="h1-center">
+      <h1 class="h1-title">SERVICES</h1>
+    </div>
+    <div class="h1-underline"></div>
+    <h2>Hvad tilbyder jeg? - Ekspertise til dig</h2>
+    <p>
+      Jeg har så og så mange års erfaring med blandt andet det her og det her
+      inden for faget, så har du brug for kyndige hænder til dit næste projekt
+      så tøv ikke med at tage fat i mig!
+    </p>
+  </div>
   <ServicesCards />
+  <div class="service-wrapper">
+    <div class="h1-underline2"></div>
+  </div>
 </MainLayout>
+
+<style>
+  .h1-center {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+
+  .h1-title {
+    margin-bottom: 0.5rem;
+    font-size: 3rem;
+    text-align: center;
+  }
+
+  .h1-underline {
+    align-self: center;
+    height: 2px;
+    background-color: white;
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .h1-underline2 {
+    align-self: center;
+    height: 2px;
+    background-color: white;
+    width: 100%;
+    margin-top: 4rem;
+    margin-bottom: 5rem;
+  }
+
+  h2 {
+    margin-bottom: 2rem;
+  }
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  @media (min-width: 768px) {
+    .service-wrapper {
+      margin-left: 4rem;
+      margin-right: 4rem;
+    }
+
+    .portfolio-underline {
+      margin: 0 auto 2rem auto;
+    }
+  }
+</style>

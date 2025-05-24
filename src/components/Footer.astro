@@ -1,15 +1,15 @@
 <footer>
   <div class="footer">
     <div class="footer_left">
-      <img src="../src/assets/img/maksofilm_logo.png" alt="maksofilm_logo" />
+      <img src="../src/assets/MaksoFilm_Logo.svg" alt="maksofilm_logo" />
     </div>
     <div class="footer_center">
       <p>Send mig en besked!</p>
       <a href="/kontakt" class="arrow-button">→</a>
     </div>
     <div class="footer_right">
-      <img class="logo" src="../src/assets/img/instareal.svg" alt="instagram" />
-      <img class="logo" src="../src/assets/img/LI-In-Bug.png" alt="" />
+      <div class="social underline-animation">Instagram</div>
+      <div class="social underline-animation">LinkedIn</div>
     </div>
   </div>
 </footer>
@@ -26,22 +26,48 @@
 
   .footer_left {
     width: 100%;
+    max-width: 330px;
   }
 
   .footer_center {
     display: none;
   }
 
-  .footer_right {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 20px;
+  .social {
+    font-family: "Manrope", sans-serif;
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    cursor: pointer;
   }
 
-  .logo {
-    width: 150px;
-    height: 150px;
+  .underline-animation {
+    position: relative;
+    display: inline-block;
+  }
+
+  /* hover underline animation til socials links */
+
+  .underline-animation::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary-color);
+    transform-origin: bottom center;
+    transition: transform 0.25s ease-out;
+  }
+
+  .underline-animation:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom center;
+  }
+
+  .footer_right {
+    display: flex;
+    flex-direction: column;
   }
 
   @media (min-width: 768px) {
@@ -53,30 +79,24 @@
       padding: 20px;
       background: linear-gradient(to top, var(--secondary-color), transparent);
     }
-    .footer_right {
-      display: flex;
-      gap: 20px;
-    }
     .footer_left {
-      width: auto;
+      width: 180px;
+      margin-left: 2rem;
     }
     .footer_center {
       display: flex;
-      gap: 10px;
+      gap: 1.2rem;
+      margin-left: 1rem;
       align-items: center;
-    }
-
-    .logo {
-      width: 50px;
-      height: 50px;
     }
     p {
       font-family: "Manrope";
+      font-size: 1.2rem;
     }
     a {
       text-decoration: none;
     }
-    p:hover,
+
     a:hover {
       scale: 1.05;
       background-color: rgba(147, 125, 166, 1);
@@ -89,6 +109,19 @@
       color: var(--primary-color);
       font-family: "Manrope", sans-serif;
       border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .footer_right {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      margin-right: 2rem;
+    }
+    .social {
+      font-family: "Manrope", sans-serif;
+      color: var(--primary-color);
+      font-size: 1.5rem;
       cursor: pointer;
     }
   }

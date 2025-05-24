@@ -27,26 +27,33 @@ const sortedYears = Object.keys(groupedByYear).sort((a, b) => b - a);
 
 <div class="card-container">
   {
-    sortedYears.map((year) => (
-      <section class="year-group">
+    sortedYears.map((year, index) => (
+      <section class={`year-group ${index % 2 === 0 ? "even" : "odd"}`}>
         <h3 class="year-label">{year}</h3>
-        {groupedByYear[year].map((item) => (
-          <a href={`/portfolio/${item.project_slug}`} class="card-link">
-            <article class="card">
-              <img src={item.project_photo} alt={item.project_title} />
-              <div class="card-text">
-                <h2 class="card-title">{item.project_title}</h2>
-                <p class="card-subtitle">{item.project_category}</p>
-              </div>
-            </article>
-          </a>
-        ))}
+        <div class="card-row-outer">
+          <div class="card-row">
+            {groupedByYear[year].map((item) => (
+              <a href={`/portfolio/${item.project_slug}`} class="card-link">
+                <article class="card">
+                  <img src={item.project_photo} alt={item.project_title} />
+                  <div class="card-text">
+                    <h2 class="card-title">{item.project_title}</h2>
+                    <p class="card-subtitle">{item.project_category}</p>
+                  </div>
+                </article>
+              </a>
+            ))}
+          </div>
+        </div>
       </section>
     ))
   }
 </div>
 
 <style>
+  h3 {
+    font-size: 2rem;
+  }
   .card-container {
     display: flex;
     flex-direction: column;
@@ -55,12 +62,11 @@ const sortedYears = Object.keys(groupedByYear).sort((a, b) => b - a);
 
   .year-label {
     position: relative;
-    margin-bottom: 2.5rem;
+    margin-bottom: 1rem;
     color: var(--primary-color);
     padding-bottom: 0.25rem;
   }
 
-  /* Simulated glowing border-bottom */
   .year-label::after {
     content: "";
     position: absolute;
@@ -78,38 +84,92 @@ const sortedYears = Object.keys(groupedByYear).sort((a, b) => b - a);
     margin-bottom: 3rem;
   }
 
+  .card-row-outer {
+    overflow-x: auto;
+    padding-inline: 1rem;
+    padding-top: 2rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .card-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    overflow: visible;
+  }
+
+  @media (min-width: 600px) {
+    .card-row {
+      flex-direction: row;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .card-link {
+      flex: 0 0 auto;
+      scroll-snap-align: start;
+    }
+    .card-container {
+      padding-inline: 4rem; /* 4rem left & right on desktop */
+    }
+  }
+
   .card {
-    background-color: var(--primary-color);
     border-radius: 5px;
     overflow: hidden;
-    width: 250px;
-    height: 320px;
+    width: 300px;
+    height: 390px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     border: 1.5px solid var(--white-color);
     margin-bottom: 1rem;
+    transition:
+      box-shadow 0.3s ease,
+      transform 0.3s ease;
+  }
+
+  .even .card {
+    background-color: var(--primary-color);
+  }
+
+  .odd .card {
+    background-color: #ac9bba;
+  }
+
+  .even .card:hover {
+    box-shadow:
+      0 0 12px var(--primary-color),
+      0 0 12px var(--primary-color);
+    transform: translateY(-4px);
+  }
+
+  .odd .card:hover {
+    box-shadow:
+      0 0 12px #ac9bba,
+      0 0 12px #ac9bba;
+    transform: translateY(-4px);
   }
 
   .card img {
     width: 100%;
-    height: 200px;
+    height: 240px;
     display: block;
     object-fit: cover;
   }
 
   .card-text {
     padding: 1rem;
-    background-color: var(--primary-color);
   }
 
   .card-title {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     margin: 0;
     color: var(--black-color);
     font-weight: 500;
   }
 
   .card-subtitle {
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     color: var(--black-color);
     font-weight: bold;
     margin-top: 0.25rem;
