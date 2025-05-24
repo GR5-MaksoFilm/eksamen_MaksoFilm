@@ -27,8 +27,8 @@ const sortedYears = Object.keys(groupedByYear).sort((a, b) => b - a);
 
 <div class="card-container">
   {
-    sortedYears.map((year) => (
-      <section class="year-group">
+    sortedYears.map((year, index) => (
+      <section class={`year-group ${index % 2 === 0 ? "even" : "odd"}`}>
         <h3 class="year-label">{year}</h3>
         <div class="card-row-outer">
           <div class="card-row">
@@ -54,7 +54,6 @@ const sortedYears = Object.keys(groupedByYear).sort((a, b) => b - a);
   h3 {
     font-size: 2rem;
   }
-
   .card-container {
     display: flex;
     flex-direction: column;
@@ -87,7 +86,6 @@ const sortedYears = Object.keys(groupedByYear).sort((a, b) => b - a);
 
   .card-row-outer {
     overflow-x: auto;
-    overflow-y: visible;
     padding-inline: 1rem;
     padding-top: 2rem;
     padding-bottom: 1.5rem;
@@ -96,26 +94,28 @@ const sortedYears = Object.keys(groupedByYear).sort((a, b) => b - a);
   .card-row {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 1.5rem;
     overflow: visible;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 600px) {
     .card-row {
       flex-direction: row;
       scroll-snap-type: x mandatory;
       -webkit-overflow-scrolling: touch;
-      overflow: visible;
     }
 
     .card-link {
       flex: 0 0 auto;
       scroll-snap-align: start;
     }
+    .card-container {
+      padding-inline: 4rem; /* 4rem left & right on desktop */
+    }
   }
 
   .card {
-    background-color: var(--primary-color);
     border-radius: 5px;
     overflow: hidden;
     width: 300px;
@@ -128,10 +128,25 @@ const sortedYears = Object.keys(groupedByYear).sort((a, b) => b - a);
       transform 0.3s ease;
   }
 
-  .card:hover {
+  .even .card {
+    background-color: var(--primary-color);
+  }
+
+  .odd .card {
+    background-color: #ac9bba;
+  }
+
+  .even .card:hover {
     box-shadow:
       0 0 12px var(--primary-color),
       0 0 12px var(--primary-color);
+    transform: translateY(-4px);
+  }
+
+  .odd .card:hover {
+    box-shadow:
+      0 0 12px #ac9bba,
+      0 0 12px #ac9bba;
     transform: translateY(-4px);
   }
 
@@ -144,7 +159,6 @@ const sortedYears = Object.keys(groupedByYear).sort((a, b) => b - a);
 
   .card-text {
     padding: 1rem;
-    background-color: var(--primary-color);
   }
 
   .card-title {
