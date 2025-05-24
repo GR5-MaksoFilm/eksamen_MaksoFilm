@@ -6,7 +6,7 @@ import "../styles/global.css";
 ---
 
 <MainLayout>
-  <h1>Lad os samarbejde!</h1>
+  <h1 class="samarbejde-title">Lad os samarbejde!</h1>
   <div class="grid_1_1_kontakt">
     <div class="left">
       <h2>Generel henvendelse:</h2>
@@ -26,18 +26,60 @@ import "../styles/global.css";
     padding: 0;
   }
   .grid_1_1_kontakt {
+    display: flex;
+    flex-direction: column;
     margin-bottom: 5rem;
   }
-  h1 {
-    padding-left: 2rem;
-    margin-left: 3rem;
-    margin-bottom: 3rem;
-    margin-top: 3rem;
 
-    place-self: center;
+  h3 {
+    margin-top: 0.6rem;
   }
+
   .left {
-    place-self: center;
+    margin-left: 2rem;
+    margin-top: 0.2rem;
     margin-bottom: 3rem;
+  }
+  .samarbejde-title {
+    position: relative;
+    display: inline-block;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0 2rem;
+  }
+
+  .samarbejde-title::after {
+    content: "";
+    display: block;
+    height: 2px;
+    background-color: white;
+    margin-top: 0.5rem;
+    width: 100%;
+  }
+
+  @media (min-width: 768px) {
+    .grid_1_1_kontakt {
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 4rem;
+    }
+    .left {
+      margin-left: 8rem;
+      margin-top: 0.2rem;
+      margin-bottom: 0;
+      max-width: 400px;
+    }
+    .right {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+    }
+    .samarbejde-title {
+      left: 0;
+      transform: none;
+      margin-left: 6rem;
+    }
   }
 </style>
