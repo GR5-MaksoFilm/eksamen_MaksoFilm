@@ -4,8 +4,6 @@ dist/
 # generated types
 .astro/
 
-# plugins
-/.prettierrc.mjs
 
 # dependencies
 node_modules/

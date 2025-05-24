@@ -7,13 +7,16 @@
   --background-color: #222222;
   --black-color: #141414;
   --white-color: #fffafa;
+
+  --main-font: "Manrope", sans-serif;
+  --secondary-font: "Poltawski Nowy", sans-serif;
 }
 
 h1,
 h2,
 h3 {
   color: var(--primary-color);
-  font-family: "Manrope", sans-serif;
+  font-family: var(--main-font);
   font-weight: 700;
 }
 
@@ -29,7 +32,7 @@ h3 {
 
 p {
   color: var(--primary-color);
-  font-family: "Poltawski Nowy", sans-serif;
+  font-family: var(--secondary-font);
   font-weight: 400;
   font-size: 1rem;
 }
@@ -37,7 +40,9 @@ p {
 body {
   background-color: var(--background-color);
 }
-
+main{
+  overflow: hidden;
+}
 * {
   scroll-behavior: smooth;
 }
