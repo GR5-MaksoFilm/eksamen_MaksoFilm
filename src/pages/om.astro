@@ -1,0 +1,236 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import "../styles/global.css";
+---
+
+<MainLayout>
+  <h1 class="streg">Om MAKSOFILM</h1>
+  <p class="p1-mobil">Maksofilm er et passioneret film- og medieproduktionsselskab, der skaber visuelt stærke fortællinger med kant, følelse og autenticitet.</p>
+  <div class="grid_1_1_om">
+    <div class="venstre">
+      <img src="src/assets/img/profilbillede.webp" alt="profilepic" class="img profilbillede" />
+    </div>
+    <div class="højre">
+      <p class="p1-desktop">Maksofilm er et passioneret film- og medieproduktionsselskab, der skaber visuelt stærke fortællinger med kant, følelse og autenticitet.</p>
+      <p class="p2">
+        Vi arbejder med alt fra dokumentarfilm, reklamer og kampagnevideoer til musikvideoer, portrætter og visuelle fortællinger for både private og erhverv. Uanset projektets størrelse er vores
+        tilgang den samme: Høj kvalitet, kreativ tænkning og fuld dedikation. Hos Maksofilm handler det ikke kun om billeder — det handler om at fange det ægte øjeblik, den rå følelse og den historie,
+        der gør dit projekt unikt.
+      </p>
+      <p class="p2">
+        Vi mener, at de mest fængslende historier opstår, når passion kombineres med håndværk. Derfor arbejder vi målrettet for at formidle dit budskab klart og stærkt. Gennem tæt samarbejde og åben
+        dialog skaber vi indhold, der både engagerer, inspirerer og efterlader et varigt indtryk.
+      </p>
+      <p class="p2">
+        Du kan finde et overblik på mit arbejde under <a href="/portfolio" class="underline-animation">PORTFOLIO</a>.
+      </p>
+    </div>
+  </div>
+
+  <div class="grid_1_1_1">
+    <img src="src/assets/img/bts.webp" alt="Behind the scenes" class="imggrid" />
+    <img src="src/assets/img/scene.webp" alt="scene" class="imggrid" />
+    <img src="src/assets/img/klaptrae.webp" alt="klaptrae" class="imggrid" />
+    <img src="src/assets/img/scene2.webp" alt="scene2" class="imggrid" />
+  </div>
+</MainLayout>
+
+<style>
+  .imggrid {
+    width: 400px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+
+  .profilbillede {
+    border: 3px solid var(--primary-color);
+    margin-bottom: 2rem;
+    border-radius: 12px;
+  }
+
+  .streg {
+    position: relative;
+    display: inline-block;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0 2rem;
+  }
+
+  .streg::after {
+    content: "";
+    display: block;
+    height: 2px;
+    background-color: white;
+    margin-top: 0.5rem;
+    width: 100%;
+  }
+
+  .grid_1_1_om {
+    display: grid;
+    grid-template-columns: 1fr; /* billede over tekst som default */
+    gap: 2rem;
+    margin-top: 2rem;
+    margin-inline: 1rem;
+  }
+  p {
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .p2 {
+    padding: 0rem 1.6rem 0rem 0rem;
+    margin-left: 1rem;
+  }
+
+  a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: bolder;
+  }
+
+  .underline-animation {
+    position: relative;
+    display: inline-block;
+  }
+
+  .underline-animation::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary-color);
+    transform-origin: bottom center;
+    transition: transform 0.25s ease-out;
+  }
+
+  .underline-animation:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom center;
+  }
+
+  .grid_1_1_1 {
+    display: grid;
+    margin: auto;
+    place-content: center;
+    margin-bottom: 4rem;
+    gap: 2.5rem;
+  }
+
+  .p1-mobil {
+    display: block;
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  .p1-desktop {
+    display: none;
+  }
+
+  @media (min-width: 680px) and (max-width: 1100px) {
+    .grid_1_1_om {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      margin-inline: auto;
+      padding-inline: 2rem;
+      max-width: 900px;
+    }
+
+    .profilbillede {
+      max-width: 300px;
+      margin: auto;
+    }
+
+    .højre {
+      margin: 0 auto;
+      max-width: 750px;
+      margin-bottom: 2rem;
+    }
+
+    .p1-mobil {
+      display: none;
+    }
+
+    .p1-desktop {
+      display: block;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .grid_1_1_1 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      justify-items: center;
+      margin-inline: auto;
+      max-width: 700px;
+    }
+
+    .grid_1_1_1 img {
+      width: 100%;
+      max-width: 300px;
+    }
+  }
+
+  @media (min-width: 1100px) {
+    .grid_1_1_om {
+      grid-template-columns: 0.6fr 1fr;
+      gap: 2rem;
+      margin-top: 2rem;
+      margin-left: 10rem;
+      margin-right: auto;
+    }
+    .profilbillede {
+      width: 100%;
+      max-width: 350px;
+      height: auto;
+      margin-top: 1rem;
+    }
+
+    .p1-mobil {
+      display: none;
+    }
+
+    .p1-desktop {
+      display: block;
+      margin-bottom: 2rem;
+      margin-left: 0;
+    }
+
+    p {
+      max-width: 60ch;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .p2 {
+      margin: 0;
+      margin-bottom: 2rem;
+    }
+
+    .venstre {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .højre {
+      padding: 1rem 2rem;
+    }
+
+    .grid_1_1_1 {
+      grid-template-columns: repeat(auto-fit, 300px);
+      margin-top: 1rem;
+    }
+
+    .grid_1_1_1 img {
+      max-width: 300px;
+    }
+  }
+</style>
