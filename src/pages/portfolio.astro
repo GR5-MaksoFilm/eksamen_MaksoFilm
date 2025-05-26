@@ -19,17 +19,18 @@ import Card from "../components/Card.astro";
 
   .portfolio-title {
     position: relative;
-    display: inline-block;
     margin-bottom: 2rem;
   }
 
   .portfolio-title::after {
     content: "";
-    display: block;
-    height: 2px;
-    background-color: white;
-    margin-top: 0.5rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
     width: 120%;
+    height: 2px;
+    background: white;
+    margin-top: 0.5rem;
     transform: translateX(-9%);
   }
 </style>

@@ -1,41 +1,28 @@
----
-const { tekst, url } = Astro.props;
----
-
-<a href=`${url}`>
-  <button>{tekst}</button>
-</a>
+<a href="/portfolio" class="button-link">SE PORTFOLIO</a>
 
 <style>
-  a {
-    text-decoration: none;
-    display: flex;
+  .button-link {
+    display: inline-flex;
     justify-content: center;
-    margin: 2rem auto; /* centers and adds spacing */
-  }
-
-  button {
+    align-items: center;
+    margin: 2rem auto;
+    padding: 0.5rem 2.2rem;
     background-color: var(--secondary-color);
+    color: var(--primary-color);
     font-family: manrope;
     font-weight: bold;
-    color: var(--primary-color);
     font-size: 1.8rem;
-    padding: 0.5rem 2.2rem;
     border-radius: 0.5rem;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    text-decoration: none;
     border: none;
     cursor: pointer;
-    text-decoration: none;
-    transition: 0.3s;
-    transition: background-color 0.2s ease;
-  }
-  button:hover {
-    scale: 1.05;
-    background-color: rgba(147, 125, 166, 1);
+    transition:
+      background-color 0.2s ease,
+      transform 0.2s ease;
   }
 
-  @media (min-width: 768px) {
+  .button-link:hover {
+    transform: scale(1.05);
+    background-color: rgba(147, 125, 166, 1);
   }
 </style>
