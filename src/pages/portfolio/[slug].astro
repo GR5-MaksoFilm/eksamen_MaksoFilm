@@ -5,7 +5,6 @@ import Footer from "../../components/Footer.astro";
 import MainLayout from "../../layouts/MainLayout.astro";
 import ButtonBack from "../../components/ButtonBack.astro";
 
-// ✅ 1. Generate static paths from Supabase
 export async function getStaticPaths() {
   const url =
     "https://uhcutojnbibslmplbwqd.supabase.co/rest/v1/Portfolio?select=project_slug";
@@ -22,14 +21,13 @@ export async function getStaticPaths() {
   const data = await res.json();
 
   const slugs = data.map((item) => item.project_slug.trim());
-  console.log("✅ Static slugs generated:", slugs);
+  console.log(" Static slugs generated:", slugs);
 
   return slugs.map((slug) => ({
     params: { slug },
   }));
 }
 
-// ✅ 2. Get project by current slug
 const { slug: rawSlug } = Astro.params;
 const slug = rawSlug.trim();
 
@@ -46,7 +44,7 @@ const res = await fetch(fetchUrl, {
 });
 const data = await res.json();
 
-console.log("📦 Project fetch result for slug:", slug, data); // ✅ Debug fetch result
+console.log(" Project fetch result for slug:", slug, data);
 
 const project = data[0];
 ---

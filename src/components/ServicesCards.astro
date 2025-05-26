@@ -23,6 +23,26 @@ const services = [
 ];
 ---
 
+<div class="section-header">
+  <h2>Hvad tilbyder jeg? - Ekspertise til dig</h2>
+  <p>
+    Jeg har så og så mange års erfaring med blandt andet det her og det her
+    inden for faget, så har du brug for kyndige hænder til dit næste projekt så
+    tøv ikke med at tage fat i mig!
+  </p>
+</div>
+
+<div class="card-container">
+  {
+    services.map((service) => (
+      <div class="card">
+        <h2>{service.title}</h2>
+        <p>{service.description}</p>
+      </div>
+    ))
+  }
+</div>
+
 <style>
   /* (text above the cards) */
   .section-header {
@@ -41,7 +61,6 @@ const services = [
     line-height: 1.6;
   }
 
-  /* Cards container */
   .card-container {
     display: flex;
     flex-direction: column;
@@ -51,7 +70,6 @@ const services = [
     margin: 0 auto;
   }
 
-  /* Card styling */
   .card {
     width: 300px;
     height: 160px;
@@ -91,7 +109,6 @@ const services = [
     line-height: 1.4;
   }
 
-  /* Grid layout for cards on wider screens */
   @media (min-width: 670px) {
     .card-container {
       display: grid;
@@ -101,24 +118,9 @@ const services = [
       justify-items: center;
       max-width: 680px;
     }
-
-    p {
-      max-width: 50ch; /* around 45 characters per line */
-      line-height: 1.5;
-      font-size: 1.2rem;
-      margin-bottom: 2rem;
-    }
   }
 
-  /* Larger scale for wide screens */
   @media (min-width: 990px) {
-    .card-container {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2rem;
-      justify-items: center;
-      justify-content: center;
-    }
     .card {
       width: 450px;
       height: 240px;
@@ -134,23 +136,3 @@ const services = [
     }
   }
 </style>
-
-<div class="section-header">
-  <h2>Hvad tilbyder jeg? - Ekspertise til dig</h2>
-  <p>
-    Jeg har så og så mange års erfaring med blandt andet det her og det her
-    inden for faget, så har du brug for kyndige hænder til dit næste projekt så
-    tøv ikke med at tage fat i mig!
-  </p>
-</div>
-
-<div class="card-container">
-  {
-    services.map((service) => (
-      <div class="card">
-        <h2>{service.title}</h2>
-        <p>{service.description}</p>
-      </div>
-    ))
-  }
-</div>
