@@ -1,10 +1,10 @@
 ---
-import {Image} from 'astro:assets';
-import Glow from '../assets/img/glow_rect.png';
+import { Image } from "astro:assets";
+import Glow from "../assets/img/glow.png";
 ---
 
 <div class="hero">
-    <Image src={Glow} class="underlay" alt="Glow effect"/>
+  <Image src={Glow} class="underlay" alt="Glow effect" />
   <iframe
     class="video"
     title="vimeo-player"
@@ -19,7 +19,13 @@ import Glow from '../assets/img/glow_rect.png';
 <style>
   .hero {
     position: relative;
-    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.5rem;
+    margin-bottom: 6rem;
+    margin-left: auto;
+    margin-right: auto;
     aspect-ratio: 12 / 9;
   }
   .video {
@@ -33,24 +39,23 @@ import Glow from '../assets/img/glow_rect.png';
   }
 
   .underlay {
-        position: absolute;
-    top: 0;
-    left: 0;
-    width: 105%;
-    transform: translate(-2%, -4%);
+    position: absolute;
+    width: 130%; /* slightly larger than main image */
+    transform: rotate(2.5deg);
     z-index: 0;
     pointer-events: none;
-    filter: blur(8px);
-    rotate: 4deg;
-    
+    opacity: 0.9;
   }
 
-  main{overflow: hidden;}
+  main {
+    overflow: hidden;
+  }
 
   @media (min-width: 768px) {
     .hero {
-      max-width: 800px; /* fx max bredde for desktop */
-      margin: 0 auto;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
     }
   }
 </style>
