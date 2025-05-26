@@ -23,8 +23,6 @@ Der arbejdes i Astro og derfor bruger vi også Astros egen filstruktur med vores
 
 • Branchens navngives som følgende eksempel ”feature_navn"
 
- 
-
 ## Arbejdsflow:
 
 • INGEN arbejder i main, medmindre det er aftalt på forhånd
@@ -35,7 +33,8 @@ Der arbejdes i Astro og derfor bruger vi også Astros egen filstruktur med vores
 
 • Eventuelle funktioner i JS laves som arrow functions
 • Der bruges class selector til CSS af elementer der navngives ”klassens-funktion_beskrivelse” som fx ”grid_none-to-3” for et layout der går fra intet grid til column af 3
-• Der bruges id selector til elementer der skal påvirkes af eventuel JS
+• Der bruges id selector til elementer der skal påvirkes af eventuel JS´
+• CSS laves i hvert dokument i et <style> tag, global CSS laves i global.css dokumentet der findes i styles mappen
 
 # Funktionalitet
 

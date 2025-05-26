@@ -1,33 +1,27 @@
 ---
 import Logo from "../assets/MaksoFilm_Logo.svg";
-import "../pages/index.astro";
-import "../pages/portfolio.astro";
-import "../pages/om.astro";
-import "../pages/services.astro";
-import "../pages/kontakt.astro";
 ---
 
 <nav>
-  <div class="spacer"></div>
   <ul class="menu first">
     <li class="fill-animation">
-      <a href="src/pages/om.astro" class="underline-animation">Om</a>
+      <a href="om" class="underline-animation">Om</a>
     </li>
     <li class="fill-animation">
-      <a href="src/pages/portfolio.astro" class="underline-animation"
+      <a href="portfolio" class="underline-animation"
         >Portfolio</a
       >
     </li>
   </ul>
 
-  <a href="../pages/index.astro"><Logo class="logo" /></a>
+  <a href="/"><Logo class="logo" /></a>
 
   <ul class="menu second">
     <li class="fill-animation">
-      <a href="src/pages/services.astro" class="underline-animation">Services</a>
+      <a href="services" class="underline-animation">Services</a>
     </li>
     <li class="fill-animation">
-      <a href="src/pages/kontakt.astro" class="underline-animation">Kontakt</a>
+      <a href="kontakt" class="underline-animation">Kontakt</a>
     </li>
   </ul>
   <div id="burger">
@@ -63,24 +57,29 @@ import "../pages/kontakt.astro";
   }
 
   nav {
+    position: sticky;
+    width: 100%;
+    top: 0;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     padding: 1rem;
     margin-inline: auto;
     gap: 2rem;
+    background-color: var(--background-color);
+    z-index: 10;
   }
 
+
   #burger {
+    position: absolute;
+    top: 30px;
+    right: 30px;
     width: 30px;
     height: 30px;
     border-radius: 5px;
     align-content: center;
     cursor: pointer;
-  }
-  .spacer {
-    width: 30px;
-    height: 30px;
   }
   span {
     display: block;
@@ -94,10 +93,6 @@ import "../pages/kontakt.astro";
     transition:
       transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
       opacity 0.55s ease;
-  }
-
-  nav {
-    justify-content: space-between;
   }
 
   nav > #burger.active span:nth-child(1) {
@@ -129,30 +124,38 @@ import "../pages/kontakt.astro";
       display: block;
       position: absolute;
       background-color: var(--primary-color);
-      top: 94px;
-      right: 1rem;
-      width: 20%;
-      box-shadow: 0 10px 10px var(--secondary-color);
+      top: 90px;
+      right: 0;
+      width: 100%;
       z-index: 1;
-      text-align: right;
+      text-align: center;
     }
     nav.active .menu.second {
       display: block;
       position: absolute;
       background-color: var(--primary-color);
-      top: 159px;
-      right: 1rem;
-      width: 20%;
-      box-shadow: 0 10px 10px var(--secondary-color);
+      top: 165px;
+      right: 0;
+      width: 100%;
       z-index: 1;
-      text-align: right;
+      text-align: center;
     }
     nav.active .fill-animation > a {
       color: var(--background-color);
-      padding-right: 10px;
-      font-size: 1.5rem;
+      font-size: 25px;
       display: block;
       width: 100%;
+    }
+
+    .menu.first li, .menu.second li {
+       border-bottom: solid 2px var(--secondary-color);
+    }
+
+    .menu.first>li:first-child{
+      border-top: solid 1px var(--secondary-color);
+    }
+    .menu.second>li:last-child{
+      border-bottom: solid 1px var(--secondary-color);
     }
 
     .fill-animation {
@@ -192,8 +195,7 @@ import "../pages/kontakt.astro";
       display: none;
     }
 
-    #burger,
-    .spacer {
+    #burger {
       display: block;
     }
   }
@@ -216,8 +218,7 @@ import "../pages/kontakt.astro";
       transform: scaleX(1);
       transform-origin: bottom center;
     }
-    #burger,
-    .spacer {
+    #burger{
       display: none;
     }
   }
