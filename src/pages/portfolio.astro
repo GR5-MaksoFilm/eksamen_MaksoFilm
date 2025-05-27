@@ -4,33 +4,10 @@ import Card from "../components/Card.astro";
 ---
 
 <MainLayout>
-  <div class="portfolio-center">
-    <h1 class="portfolio-title">PORTFOLIO</h1>
-  </div>
+    <h1 class="title">PORTFOLIO</h1>
   <Card />
 </MainLayout>
 
 <style>
-  .portfolio-center {
-    display: flex;
-    justify-content: center;
-    margin-top: 2rem;
-  }
 
-  .portfolio-title {
-    position: relative;
-    margin-bottom: 2rem;
-  }
-
-  .portfolio-title::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 120%;
-    height: 2px;
-    background: white;
-    margin-top: 0.5rem;
-    transform: translateX(-9%);
-  }
 </style>

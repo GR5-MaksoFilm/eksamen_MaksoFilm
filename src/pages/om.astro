@@ -1,169 +1,90 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import "../styles/global.css";
+import { Image } from "astro:assets";
+import Bts from "../assets/img/bts.webp";
+import Scene_1 from "../assets/img/scene_1.webp";
+import Klaptrae from "../assets/img/klaptrae.webp";
+import Scene_2 from "../assets/img/scene_2.webp";
+import Profilbillede from "../assets/img/profilbillede.webp";
 ---
 
 <MainLayout>
-  <h1 class="streg">Om MAKSOFILM</h1>
-  <p class="p1-mobil">Maksofilm er et passioneret film- og medieproduktionsselskab, der skaber visuelt stærke fortællinger med kant, følelse og autenticitet.</p>
-  <div class="grid_1_1_om">
-    <div class="venstre">
-      <img src="src/assets/img/profilbillede.webp" alt="profilepic" class="img profilbillede" />
-    </div>
-    <div class="right">
-      <p class="p1-desktop">Maksofilm er et passioneret film- og medieproduktionsselskab, der skaber visuelt stærke fortællinger med kant, følelse og autenticitet.</p>
-      <p class="p2">
+  <h1 class="title">Om MAKSOFILM</h1>
+  <section class="grid_1_1_om">
+    <p class="undertitel">Maksofilm er et passioneret film- og medieproduktionsselskab, der skaber visuelt stærke fortællinger med kant, følelse og autenticitet.</p>
+
+    <Image src={Profilbillede} alt="Billede af Mads Krause" class="profilbillede" />
+
+    <p class="text">
         Vi arbejder med alt fra dokumentarfilm, reklamer og kampagnevideoer til musikvideoer, portrætter og visuelle fortællinger for både private og erhverv. Uanset projektets størrelse er vores
         tilgang den samme: Høj kvalitet, kreativ tænkning og fuld dedikation. Hos Maksofilm handler det ikke kun om billeder — det handler om at fange det ægte øjeblik, den rå følelse og den historie,
         der gør dit projekt unikt.
-      </p>
-      <p class="p2">
+        <br>
         Vi mener, at de mest fængslende historier opstår, når passion kombineres med håndværk. Derfor arbejder vi målrettet for at formidle dit budskab klart og stærkt. Gennem tæt samarbejde og åben
         dialog skaber vi indhold, der både engagerer, inspirerer og efterlader et varigt indtryk.
-      </p>
-      <p class="p2">
+        <br>
         Du kan finde et overblik på mit arbejde under <a href="/portfolio" class="underline-animation">PORTFOLIO</a>.
-      </p>
-    </div>
-  </div>
-
-  <div class="grid_1_1_1">
-    <img src="src/assets/img/bts.webp" alt="Behind the scenes" class="imggrid" />
-    <img src="src/assets/img/scene.webp" alt="scene" class="imggrid" />
-    <img src="src/assets/img/klaptrae.webp" alt="klaptrae" class="imggrid" />
-    <img src="src/assets/img/scene2.webp" alt="scene2" class="imggrid" />
-  </div>
+    </p>
+  </section>
+<hr class="sectionline">
+  <section class="grid_1_1_1">
+    <Image src={Bts} alt="Behind the scenes billede" class="grid_img"/>
+    <Image src={Scene_1} alt="Billede fra en kortfilm" class="grid_img"/>
+    <Image src={Klaptrae} alt="Billede af et klaptræ fra filmen Deroute" class="grid_img"/>
+    <Image src={Scene_2} alt="Billede fra en anden kortfilm" class="grid_img"/>
+  </section>
 </MainLayout>
 
 <style>
-  .imggrid {
+  .grid_img {
     width: 400px;
     aspect-ratio: 1 / 1;
     object-fit: cover;
     border-radius: 12px;
   }
 
-  .profilbillede {
-    border: 3px solid var(--primary-color);
-    border-radius: 12px;
-    max-width: 400px;
-    margin: auto;
-  }
-
-  .streg {
-    position: relative;
-    display: inline-block;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 0 2rem;
-  }
-
-  .streg::after {
-    content: "";
-    display: block;
-    height: 2px;
-    background-color: white;
-    margin-top: 0.5rem;
-    width: 100%;
-  }
-
   .grid_1_1_om {
-    display: flex;
-    flex-direction: column;
+    display: grid;
     gap: 2rem;
     margin: 2rem 1rem;
   }
 
-  p {
-    line-height: 1.5;
-    margin-bottom: 1.5rem;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 60ch;
-  }
+ .undertitel, .text{
+  max-width: 60ch;
+ }
 
   a {
-    text-decoration: none;
-    color: var(--primary-color);
-    font-weight: bolder;
-  }
-
-  .underline-animation {
-    position: relative;
-    display: inline-block;
-  }
-
-  .underline-animation::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: var(--primary-color);
-    transform-origin: bottom center;
-    transition: transform 0.25s ease-out;
-  }
-
-  .underline-animation:hover::after {
-    transform: scaleX(1);
-    transform-origin: bottom center;
+    font-weight: 800;
   }
 
   .grid_1_1_1 {
     display: grid;
-    margin: auto;
+    margin-inline: auto;
     place-content: center;
-    margin-bottom: 4rem;
-    gap: 2.5rem;
-  }
-
-  .p1-mobil {
-    display: block;
-    text-align: center;
-    padding: 0 1rem;
-  }
-
-  .p1-desktop {
-    display: none;
+    gap: 40px;
   }
 
   @media (min-width: 768px) {
     .grid_1_1_om {
-      flex-direction: row;
-      gap: 2rem;
-      margin-left: 8rem;
+      grid-template-columns: 1fr 2fr;
+      gap: 0;
     }
 
     .profilbillede {
-      width: 100%;
-      max-width: 400px;
-      height: auto;
+      min-width: 250px;
       object-fit: cover;
-      display: block;
-      border-radius: 12px;
+      grid-row: 1/3;
     }
 
-    .p1-mobil {
-      display: none;
+    .undertitel, .text{
+      margin-left: 24px;
+    }
+    .undertitel {
+      margin-bottom: 1rem;
     }
 
-    .p1-desktop {
-      display: block;
-      margin-bottom: 2rem;
-      margin-left: 0;
-    }
-
-    .p2 {
-      margin: 0;
-      margin-bottom: 2rem;
-    }
     .grid_1_1_1 {
       grid-template-columns: repeat(auto-fit, 300px);
-      margin-top: 1rem;
     }
 
     .grid_1_1_1 img {
