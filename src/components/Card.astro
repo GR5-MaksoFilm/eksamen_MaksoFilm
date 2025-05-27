@@ -51,6 +51,7 @@ const sortedYears = Object.keys(groupedByYear).sort((a, b) => b - a);
 </div>
 
 <style>
+
   h3 {
     font-size: 2rem;
   }
@@ -58,19 +59,21 @@ const sortedYears = Object.keys(groupedByYear).sort((a, b) => b - a);
   .card-container {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
-    padding-inline: 16px;
+    gap: 32px;
+    margin: 32px 16px;
   }
 
   .year-group {
-    margin-bottom: 3rem;
+    margin: 0 auto 48px;
+    width: 85vw;
   }
 
   .year-label {
     position: relative;
-    margin-bottom: 1rem;
+    margin-bottom: 16px;
     color: var(--primary-color);
-    padding-bottom: 0.25rem;
+    padding-bottom: 4px;
+    place-self: start;
   }
 
   .year-label::after {
@@ -79,7 +82,7 @@ const sortedYears = Object.keys(groupedByYear).sort((a, b) => b - a);
     bottom: 0;
     left: 0;
     height: 2px;
-    width: 100%;
+    width:85vw ;
     background-color: var(--primary-color);
     box-shadow:
       0 0 6px var(--primary-color),
@@ -88,14 +91,14 @@ const sortedYears = Object.keys(groupedByYear).sort((a, b) => b - a);
 
   .card-row-outer {
     overflow-x: auto;
-    padding: 2rem 1rem 1.5rem;
+    padding: 32px 16px 24px;
   }
 
   .card-row {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1.5rem;
+    gap: 24px;
   }
 
   .card {
@@ -140,7 +143,7 @@ const sortedYears = Object.keys(groupedByYear).sort((a, b) => b - a);
   }
 
   .card-text {
-    padding: 1rem;
+    padding: 16px;
   }
 
   .card-title {
@@ -154,7 +157,7 @@ const sortedYears = Object.keys(groupedByYear).sort((a, b) => b - a);
     font-size: 1.5rem;
     font-weight: 300;
     color: var(--black-color);
-    margin-top: 0.25rem;
+    margin-top: 4px;
   }
 
   .card-link {
@@ -164,6 +167,10 @@ const sortedYears = Object.keys(groupedByYear).sort((a, b) => b - a);
   }
 
   @media (min-width: 600px) {
+
+    .year-group{
+      place-items: start;
+    }
     .card-row {
       flex-direction: row;
       scroll-snap-type: x mandatory;
@@ -175,9 +182,6 @@ const sortedYears = Object.keys(groupedByYear).sort((a, b) => b - a);
       scroll-snap-align: start;
     }
 
-    .card-container {
-      padding-inline: 64px;
-    }
 
     h3 {
       font-size: 2.4rem;
