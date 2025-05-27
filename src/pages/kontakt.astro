@@ -1,85 +1,62 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import Footer from "../components/Footer.astro";
-import Form from "../components/Form.astro";
-import "../styles/global.css";
+import Form from "../components/KontaktForm.astro";
 ---
 
 <MainLayout>
-  <h1 class="samarbejde-title">Lad os samarbejde!</h1>
-  <div class="grid_1_1_kontakt">
-    <div class="left">
-      <h2>Generel henvendelse:</h2>
-      <h3>kontakt@maksofilm.dk</h3>
-      <h3>+45 00 00 00 00</h3>
+  <h1 class="title underline">Lad os samarbejde!</h1>
+  <section class="grid_1_1_kontakt">
+      <div class="info">
+        <h2>Generel henvendelse:</h2>
+        <h3>kontakt@maksofilm.dk</h3>
+        <h3>+45 00 00 00 00</h3>
+      </div>
+        <Form class="form"/>
     </div>
-    <div class="right">
-      <Form />
-    </div>
-  </div>
+  </section>
 </MainLayout>
 
 <style>
-  /* fjerner margin og padding på hele kontakt siden, så formularen kan nå ud til siderne */
-  :global(main) {
-    margin: 0;
-    padding: 0;
-  }
+.title.underline{
+  margin: 0;
+  text-align: center;
+}
   .grid_1_1_kontakt {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 5rem;
+    display: grid;
+    margin-bottom: 40px;
+    text-align: center;
+    /* place-items: center; */
   }
 
-  h3 {
-    margin-top: 0.6rem;
+  .info>h3 {
+    font-size: 1.25rem;
+    margin-top: 8px;
   }
 
-  .left {
-    margin-left: 2rem;
-    margin-top: 0.2rem;
-    margin-bottom: 3rem;
+  .info {
+    margin: 4px 0 48px;
   }
-  .samarbejde-title {
-    position: relative;
-    display: inline-block;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 0 2rem;
-  }
+  .info>h2 {
+        font-size: 1.75rem;
+      }
 
-  .samarbejde-title::after {
-    content: "";
-    display: block;
-    height: 2px;
-    background-color: white;
-    margin-top: 0.5rem;
-    width: 100%;
-  }
-
-  @media (min-width: 768px) {
+  @media (min-width: 975px) {
     .grid_1_1_kontakt {
-      flex-direction: row;
-      justify-content: space-between;
-      gap: 4rem;
+      display: grid;
+      grid-template-columns: 2fr 5fr;
+      gap: 32px;
+      text-align: left;
+      place-items: start;
     }
-    .left {
-      margin-left: 8rem;
+    .title{
+      place-self: start;
+      grid-column: span 2;
+    }
+    .info {
+      text-align: left;
       margin-top: 0.2rem;
       margin-bottom: 0;
       max-width: 400px;
-    }
-    .right {
-      flex: 1;
-      display: flex;
-      justify-content: flex-end;
-    }
-    .samarbejde-title {
-      left: 0;
-      transform: none;
-      margin-left: 6rem;
     }
   }
 </style>

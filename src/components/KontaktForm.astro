@@ -16,26 +16,21 @@
 </form>
 
 <style>
-  body,
-  main {
-    margin: 0;
-    padding: 0;
-  }
   .formular {
-    background-color: rgba(147, 125, 166, 1);
+    background-color: var(--hover-color);
     display: flex;
     flex-direction: column;
-    gap: 1.8rem;
-    font-family: "Manrope", sans-serif;
+    gap: 30px;
+    font-family: var(--main-font);
     width: 100%;
-    max-width: 700px;
-    padding: 2.5rem;
-    margin-right: 1.4rem;
+    max-width: 750px;
+    padding: 40px;
+    border-radius: 12px;
   }
 
   .formular input::placeholder,
   .formular textarea::placeholder {
-    font-family: "Manrope", sans-serif;
+    font-family: var(--main-font);
     color: black;
   }
 
@@ -50,20 +45,20 @@
 
   .formular label {
     font-size: 1.1rem;
-    font-weight: bolder;
+    font-weight: 700;
   }
 
   .formular input:focus,
   .formular textarea:focus {
     outline: none;
     box-shadow: none;
-    font-family: "Manrope", sans-serif;
+    font-family: var(--main-font);
   }
   .select {
     background: none;
     font-size: 1rem;
-    padding-bottom: 0.8rem;
-    font-family: "Manrope", sans-serif;
+    padding-bottom: 12px;
+    font-family: var(--main-font);
     font-size: 1.1rem;
     border: none;
 
@@ -74,33 +69,22 @@
     box-shadow: none;
     border-bottom: 2px solid var(--secondary-color);
   }
-  .knap {
-    background-color: var(--secondary-color);
-    border: none;
-    cursor: pointer;
-    padding: 1rem;
-    font-family: "Manrope", sans-serif;
-    font-size: 1.2rem;
-    color: var(--primary-color);
-    margin: auto;
-    padding: 0.2rem 3rem 0.2rem 3rem;
-  }
 
   .knap {
     background-color: var(--secondary-color);
     border: none;
     cursor: pointer;
-    padding: 1rem;
-    font-family: "Manrope", sans-serif;
+    font-family: var(--main-font);
     font-size: 1.2rem;
     color: var(--primary-color);
     margin: auto;
-    padding: 0.2rem 3rem 0.2rem 3rem;
+    padding: 4px 48px;
   }
 
-  .underline-animation {
-    position: relative;
-    display: inline-block;
+  @media screen and (min-width:975px){
+    .formular{
+      place-self: end;
+    }
   }
 
 </style>

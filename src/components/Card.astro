@@ -106,8 +106,7 @@ const sortedYears = Object.keys(groupedByYear).sort((a, b) => b - a);
     height: 390px;
     border-radius: 5px;
     overflow: hidden;
-    border: 1.5px solid var(--white-color);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 10px var(--black-color);
     transition:
       box-shadow 0.3s ease,
       transform 0.3s ease;
@@ -115,10 +114,12 @@ const sortedYears = Object.keys(groupedByYear).sort((a, b) => b - a);
 
   .even .card {
     background-color: var(--primary-color);
+    border: 1.5px solid var(--white-color);
   }
 
   .odd .card {
-    background-color: #ac9bba;
+    background-color: var(--hover-color);
+    border: 1.5px solid var(--secondary-color);
   }
 
   .even .card:hover {
@@ -130,8 +131,8 @@ const sortedYears = Object.keys(groupedByYear).sort((a, b) => b - a);
 
   .odd .card:hover {
     box-shadow:
-      0 0 12px #ac9bba,
-      0 0 12px #ac9bba;
+      0 0 12px var(--hover-color),
+      0 0 12px var(--hover-color);
     transform: translateY(-4px);
   }
 

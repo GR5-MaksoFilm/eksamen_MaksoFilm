@@ -12,6 +12,8 @@
 
   --main-font: "Manrope", sans-serif;
   --secondary-font: "Poltawski Nowy", sans-serif;
+
+  scroll-behavior: smooth;
 }
 
 h1,
@@ -58,9 +60,6 @@ main {
   overflow: hidden;
   padding-inline: 3vw;
 }
-* {
-  scroll-behavior: smooth;
-}
 
 /* Profilbillede af Mads */
 .profilbillede {
@@ -103,7 +102,7 @@ main {
 }
 
 /* Understreg på h1 titler */
-.title {
+.underline {
     position: relative;
     display: inline-block;
     margin-top: 32px;
@@ -113,11 +112,12 @@ main {
     padding-inline: 32px;
   }
 
-  .title:after {
+  .underline:after {
     content: "";
     display: block;
-    height: 2px;
+    height: 3px;
     background-color: var(--primary-color);
+    border-radius: 12px;
     margin-top: 8px;
     width: 100%;
   }
