@@ -5,6 +5,14 @@ import ServicesCards from "../components/ServicesCards.astro";
 
 <MainLayout>
       <h1 class="underline">SERVICES</h1>
+      <section>
+  <h2>Hvad tilbyder jeg? - Ekspertise til dig</h2>
+  <p>
+    Jeg har så og så mange års erfaring med blandt andet det her og det her
+    inden for faget, så har du brug for kyndige hænder til dit næste projekt så
+    tøv ikke med at tage fat i mig!
+  </p>
+      </section>
   <ServicesCards />
   <div class="line-copy">
     <span></span>
@@ -12,6 +20,10 @@ import ServicesCards from "../components/ServicesCards.astro";
 </MainLayout>
 
 <style>
+  section{
+    max-width: 70ch;
+    place-self: center;
+  }
 .line-copy{
   place-self: center;
 }
