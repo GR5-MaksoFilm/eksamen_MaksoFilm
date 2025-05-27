@@ -28,7 +28,7 @@ const { project } = Astro.props;
       href={project.project_watch}
       target="_blank"
       rel="noopener noreferrer"
-      class="watch-button"
+      class="watch-button underline-animation"
     >
       Se projektet her
     </a>
@@ -41,7 +41,7 @@ const { project } = Astro.props;
     />
     <img
       class="glow-background"
-      src="/src/assets/img/glow.png"
+      src="/src/assets/img/glow.webp"
       alt=""
       aria-hidden="true"
     />
@@ -94,8 +94,6 @@ const { project } = Astro.props;
   .watch-button {
     font-size: 1.8rem;
     font-family: manrope;
-    position: relative;
-    display: inline-block;
     color: var(--primary-color);
     text-decoration: none;
     font-weight: bold;
@@ -103,23 +101,6 @@ const { project } = Astro.props;
     transition: color 0.2s ease;
   }
 
-  .watch-button::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: var(--primary-color);
-    transform: scaleX(0);
-    transform-origin: bottom right;
-    transition: transform 0.3s ease-out;
-  }
-
-  .watch-button:hover::after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
-  }
 
   .image-wrapper {
     position: relative;

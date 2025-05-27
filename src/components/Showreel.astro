@@ -1,0 +1,42 @@
+---
+import { Image } from "astro:assets";
+import Glow from "../assets/img/glow.webp";
+---
+
+<div class="showreel">
+  <Image src={Glow} class="glow" alt="Glow effect"/>
+  <iframe
+    class="video"
+    title="vimeo-player"
+    src="https://player.vimeo.com/video/419927692?h=94d7a56c67"
+    allow="autoplay; fullscreen"
+    allowfullscreen
+    frameborder="0">
+  </iframe>
+</div>
+
+<style>
+  .showreel {
+    position: relative;
+    display: grid;
+    margin: 20px auto 90px;
+    place-items: center;
+    
+  }
+  .video {
+    max-width: 90%;
+    grid-column: 1;
+    grid-row: 1;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 12 / 9;
+  }
+
+  .glow {
+    width: 120%;
+    rotate: 3deg;
+    grid-row: 1;
+    grid-column: 1;
+  }
+
+</style>
