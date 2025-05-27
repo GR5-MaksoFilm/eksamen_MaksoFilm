@@ -41,21 +41,18 @@ Der arbejdes i Astro og derfor bruger vi også Astros egen filstruktur med vores
 • Der hentes data til portfolio gennem API til en database lavet med Supabase
 • Dynamisk visning af enkelte elementer fra portfolio
 
-Dette afsnit skal forklare hvad I konkret har arbejde med, for at udvikle websitet. Tænk over hvilke interaktioner brugeren kan foretage på sitet? Eller hvordan websitet håndterer og præsenterer data? Eksempler på funktionalitet, der kan beskrives:
-
-- Hentning af produkter fra API.
-- Filtrering af produkter baseret på brugerens valg.
-- Dynamisk visning af produkter i HTML.
-
-Brug korte beskrivelser, som i eksemplerne herover
-
-/////////////////////////////////////////////////////////////////////////////////
-
 # API endpoints
 
-Dette afsnit skal liste de endpoints fra API'et i har benyttet:
+• Vi har lavet vores database i Supabase. Herunder findes API url og key, som også findes under Card.astro component.
 
-- (fx. https://dummyjson.com/products)
+- url:
+  https://uhcutojnbibslmplbwqd.supabase.co/rest/v1/Portfolio?select=*
+
+- Key:
+  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVoY3V0b2puYmlic2xtcGxid3FkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDc3Mjc5NTcsImV4cCI6MjA2MzMwMzk1N30.gUKjETMs5zvXh4Hhw059erhs-V19eoJSiUCNXidk-V0
+
+
+  /////////////////////////////////////////////////////////////////////////////////
 
 # Dokumentation af Funktion
 
