@@ -10,7 +10,7 @@ import { Image } from "astro:assets";
 
 <MainLayout>
   <h1>MAKSOFILM</h1>
-  <h3>Din professionelle videopartner</h3>
+  <h3 class="h3-1">Din professionelle videopartner</h3>
   <Showreel />
   <div class="portfolio-underline"></div>
 
@@ -22,18 +22,19 @@ import { Image } from "astro:assets";
       </div>
     </div>
     <div class="right-column">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-      <ButtonPortfolio tekst="SE PORTFOLIO" url="" />
+      <p>MAKSOFILM er et film- og medieproduktionsselskab drevet af passion for den gode fortælling og det ærlige udtryk. Vi skaber visuelt stærke og følelsesladede film, der taler til både hjerte og tanke – uanset om det er dokumentarer, reklamer, musikvideoer eller kampagnefilm.</p>
+      <ButtonPortfolio />
     </div>
   </div>
 
   <div class="portfolio-underline"></div>
-  <h2>MaksoFilm løser opgaven</h2>
-  <p class="thin">Et samarbejde med MaksoFilm betyder en professionel videoproduktion og redigering. Vi samskaber og jeg kan sparre på og løse dine tanker. Lad os bringe dine ideer til live!</p>
-  <div class="portfolio-underline3"></div>
+  <h2>MAKSOFILM løser opgaven</h2>
+  <p id="p2">Et samarbejde med MAKSOFILM betyder en professionel videoproduktion og redigering. Vi samskaber og jeg kan sparre på og løse dine tanker. Lad os bringe dine ideer til live!</p>
   <FrontService />
-  <h2>Hold dig opdateret på @maksofilm</h2>
+    <div class="portfolio-underline3"></div>
+  <h2 class="insta">Hold dig opdateret på @maksofilm</h2>
   <InstagramFeed />
+  </MainLayout>
 
   <style>
     h1 {
@@ -41,23 +42,23 @@ import { Image } from "astro:assets";
       text-align: center;
     }
 
-    h3 {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-
     h2 {
       margin-bottom: 1rem;
     }
 
+    .h3-1 {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .insta {
+      text-align: center;
+      margin: 0rem 0 1.5rem 0;
+      letter-spacing: 1px; /
+    }
     .section-title {
       margin-left: 1rem;
       margin-right: 1rem;
-    }
-
-    .thin {
-      font-family: manrope;
-      font-weight: 300;
     }
 
     .portfolio-underline {
@@ -77,16 +78,17 @@ import { Image } from "astro:assets";
       margin-right: 1rem;
     }
 
+
     .left-column,
     .right-column {
       display: flex;
       flex-direction: column;
       gap: 1rem;
     }
-
     .profilbillede {
       width: 100%;
       height: auto;
+      max-width: 400px;
       border: 3px solid var(--primary-color);
       border-radius: 3px;
     }
@@ -103,16 +105,32 @@ import { Image } from "astro:assets";
     @media (min-width: 768px) {
       .grid_1_1 {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 2fr;
         gap: 2rem;
         align-items: start;
         margin-left: 4rem;
-        margin-right: 4rem;
+        margin-right: 8rem;
+        margin-bottom: 2.5rem;
       }
       h2 {
         margin-left: 4rem;
       }
 
+    #p2{
+      margin-left: 4rem;
+      margin-right: 10rem;
+    }
+
+    .right-column p{
+      margin-top: 5rem;
+      margin-left: 1rem;
+      max-width: 60ch;
+text-align: center;
+    }
+
+    .right-column{
+       margin-left: 3rem;
+    }
       .section-title,
       .portfolio-underline,
       .thin {
@@ -122,7 +140,8 @@ import { Image } from "astro:assets";
       .portfolio-underline3 {
         margin-left: 4rem;
         margin-right: 4rem;
+  
       }
     }
   </style>
-</MainLayout>
+

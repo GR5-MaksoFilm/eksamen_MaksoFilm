@@ -23,13 +23,53 @@ const services = [
 ];
 ---
 
+<div class="section-header">
+  <h2>Hvad tilbyder jeg? - Ekspertise til dig</h2>
+  <p>
+    Jeg har så og så mange års erfaring med blandt andet det her og det her
+    inden for faget, så har du brug for kyndige hænder til dit næste projekt så
+    tøv ikke med at tage fat i mig!
+  </p>
+</div>
+
+<div class="card-container">
+  {
+    services.map((service) => (
+      <div class="card">
+        <h2>{service.title}</h2>
+        <p>{service.description}</p>
+      </div>
+    ))
+  }
+</div>
+
 <style>
+  /* (text above the cards) */
+  .section-header {
+    max-width: 990px;
+    margin: 0 auto 2rem;
+    padding: 0 1rem;
+  }
+
+  .section-header h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .section-header p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+  }
+
   .card-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1.5rem;
+    max-width: 990px;
+    margin: 0 auto;
   }
+
   .card {
     width: 300px;
     height: 160px;
@@ -59,6 +99,8 @@ const services = [
     font-weight: 300;
     margin: 0;
     text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
   }
 
   .card p {
@@ -72,56 +114,25 @@ const services = [
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 2rem;
+      justify-content: center;
       justify-items: center;
-      max-width: 800px;
-      margin: 0 auto;
+      max-width: 680px;
     }
-    .card {
-      width: 300px;
-      height: 160px;
-      padding: 1.2rem;
-      color: var(--primary-color);
-      border: 2px solid var(--secondary-color);
-      border-radius: 8px;
-      box-sizing: border-box;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      font-family: sans-serif;
-      transition:
-        box-shadow 0.3s ease,
-        transform 0.3s ease;
-    }
+  }
 
-    .card:hover {
-      box-shadow:
-        0 0 12px var(--primary-color),
-        0 0 24px var(--primary-color);
-      transform: translateY(-4px);
+  @media (min-width: 990px) {
+    .card {
+      width: 450px;
+      height: 240px;
+      padding: 1.8rem;
     }
 
     .card h2 {
-      font-size: 1.8rem;
-      font-weight: 300;
-      margin: 0;
-      text-decoration: underline;
+      font-size: 2.5rem;
     }
 
     .card p {
-      margin: 0.5rem 0 0;
-      font-size: 1.1rem;
-      line-height: 1.4;
+      font-size: 1.4rem;
     }
   }
 </style>
-
-<div class="card-container">
-  {
-    services.map((service) => (
-      <div class="card">
-        <h2>{service.title}</h2>
-        <p>{service.description}</p>
-      </div>
-    ))
-  }
-</div>

@@ -1,5 +1,5 @@
 ---
-//@ts-nocheck
+// @ts-nocheck
 const { project } = Astro.props;
 ---
 
@@ -33,6 +33,7 @@ const { project } = Astro.props;
       Se projektet her
     </a>
   </div>
+
   <div class="image-wrapper">
     <img
       class="project-image"
@@ -66,7 +67,6 @@ const { project } = Astro.props;
   }
 
   .portfolio-underline {
-    align-self: center;
     height: 2px;
     background-color: white;
     width: 100%;
@@ -87,31 +87,53 @@ const { project } = Astro.props;
 
   .watch-button-wrapper {
     text-align: center;
-    margin-top: 3rem;
-    margin-bottom: 5rem;
+    margin: 3rem 0 5rem;
   }
 
   .watch-button {
     font-size: 1.8rem;
     font-family: manrope;
+    font-weight: bold;
     color: var(--primary-color);
     text-decoration: none;
-    font-weight: bold;
+    position: relative;
     padding-bottom: 2px;
     transition: color 0.2s ease;
   }
 
+  .watch-button::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary-color);
+    transform-origin: bottom center;
+    transition: transform 0.25s ease-out;
+  }
+
+  .watch-button:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom center;
+  }
 
   .image-wrapper {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 1.5rem;
-    margin-bottom: 6rem;
     max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 1.5rem auto 6rem;
+  }
+
+  .project-image {
+    width: 100%;
+    border: 3px solid var(--primary-color);
+    border-radius: 3px;
+    z-index: 1;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
 
   .glow-background {
@@ -123,21 +145,13 @@ const { project } = Astro.props;
     opacity: 0.9;
   }
 
-  .project-image {
-    width: 100%;
-    border: 3px solid var(--primary-color);
-    border-radius: 3px;
-    z-index: 1;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
   @media (min-width: 768px) {
     .info-container {
-      margin-left: 4rem;
-      margin-right: 4rem;
+      margin: 0 4rem;
     }
 
     .portfolio-underline {
-      margin: 0 auto 2rem auto;
+      margin: 0 auto 2rem;
     }
 
     .image-wrapper {
