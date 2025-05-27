@@ -38,7 +38,7 @@ const sortedYears = Object.keys(groupedByYear).sort((a, b) => b - a);
                   <img src={item.project_photo} alt={item.project_title} />
                   <div class="card-text">
                     <h2 class="card-title">{item.project_title}</h2>
-                    <p class="card-subtitle">{item.project_category}</p>
+                    <h3 class="card-subtitle">{item.project_category}</h3>
                   </div>
                 </article>
               </a>
@@ -145,14 +145,14 @@ const sortedYears = Object.keys(groupedByYear).sort((a, b) => b - a);
 
   .card-title {
     font-size: 1.8rem;
-    font-weight: 500;
+    font-weight: bold;
     margin: 0;
     color: var(--black-color);
   }
 
   .card-subtitle {
     font-size: 1.5rem;
-    font-weight: bold;
+    font-weight: 300;
     color: var(--black-color);
     margin-top: 0.25rem;
   }
@@ -181,6 +181,20 @@ const sortedYears = Object.keys(groupedByYear).sort((a, b) => b - a);
 
     h3 {
       font-size: 2.4rem;
+    }
+
+    .card-row-outer::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .card-row-outer::-webkit-scrollbar-thumb {
+      background: var(--primary-color);
+      border-radius: 4px;
+    }
+
+    .card-row-outer {
+      scrollbar-width: thin;
+      scrollbar-color: var(--primary-color) transparent;
     }
   }
 </style>
