@@ -2,7 +2,7 @@
   <input id="navn" name="navn_text" type="text" placeholder="Navn" />
   <input id="email" name="email" type="email" placeholder="Email" />
   <input id="tlf" name="tlf" type="tel" placeholder="Telefon" />
-  <select class="custom-select">
+  <select class="select">
     <option value="" disabled selected hidden>Jeg er interesseret i...</option>
     <option value="Filmoptagelse">Filmoptagelse</option>
     <option value="Podcast">Podcast</option>
@@ -30,6 +30,7 @@
     width: 100%;
     max-width: 700px;
     padding: 2.5rem;
+    margin-right: 1.4rem;
   }
 
   .formular input::placeholder,
@@ -47,17 +48,23 @@
     border-bottom: 2px solid var(--secondary-color);
   }
 
+  .formular label {
+    font-size: 1.1rem;
+    font-weight: bolder;
+  }
+
   .formular input:focus,
   .formular textarea:focus {
     outline: none;
     box-shadow: none;
+    font-family: "Manrope", sans-serif;
   }
-  .custom-select {
+  .select {
     background: none;
     font-size: 1rem;
     padding-bottom: 0.8rem;
     font-family: "Manrope", sans-serif;
-    font-size: 1rem;
+    font-size: 1.1rem;
     border: none;
 
     border-bottom: 2px solid var(--secondary-color);
