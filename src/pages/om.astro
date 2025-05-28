@@ -14,17 +14,19 @@ import Profilbillede from "../assets/img/profilbillede.webp";
     <p class="undertitel">Maksofilm er et passioneret film- og medieproduktionsselskab, der skaber visuelt stærke fortællinger med kant, følelse og autenticitet.</p>
 
     <Image src={Profilbillede} alt="Billede af Mads Krause" class="profilbillede" />
-
-    <p class="text">
-        Vi arbejder med alt fra dokumentarfilm, reklamer og kampagnevideoer til musikvideoer, portrætter og visuelle fortællinger for både private og erhverv. Uanset projektets størrelse er vores
-        tilgang den samme: Høj kvalitet, kreativ tænkning og fuld dedikation. Hos Maksofilm handler det ikke kun om billeder — det handler om at fange det ægte øjeblik, den rå følelse og den historie,
-        der gør dit projekt unikt.
-        <br>
-        Vi mener, at de mest fængslende historier opstår, når passion kombineres med håndværk. Derfor arbejder vi målrettet for at formidle dit budskab klart og stærkt. Gennem tæt samarbejde og åben
-        dialog skaber vi indhold, der både engagerer, inspirerer og efterlader et varigt indtryk.
-        <br>
-        Du kan finde et overblik på mit arbejde under <a href="/portfolio" class="underline-animation">PORTFOLIO</a>.
-    </p>
+<div class="text">
+    <p>
+      Mit navn er Mads Krause, og jeg er hjernen bag MAKSOFILM. Med en baggrund i filmproduktion og en passion for at fortælle historier, der rører ved mennesker, har jeg dedikeret mig til at skabe indhold, der ikke blot fanger</p>
+  <p>
+    Vi arbejder med alt fra dokumentarfilm, reklamer og kampagnevideoer til musikvideoer, portrætter og visuelle fortællinger for både private og erhverv. Uanset projektets størrelse er vores
+    tilgang den samme: Høj kvalitet, kreativ tænkning og fuld dedikation. Hos Maksofilm handler det ikke kun om billeder — det handler om at fange det ægte øjeblik, den rå følelse og den historie,
+    der gør dit projekt unikt.</p>
+    <p>
+      Vi mener, at de mest fængslende historier opstår, når passion kombineres med håndværk. Derfor arbejder vi målrettet for at formidle dit budskab klart og stærkt. Gennem tæt samarbejde og åben
+      dialog skaber vi indhold, der både engagerer, inspirerer og efterlader et varigt indtryk.</p>
+      <p>
+        Du kan finde et overblik på mit arbejde under <a href="/portfolio" class="underline-animation">PORTFOLIO</a>.</p>
+      </div>
   </section>
 <hr class="sectionline">
   <section class="grid_1_1_1">
@@ -48,13 +50,21 @@ import Profilbillede from "../assets/img/profilbillede.webp";
     gap: 2rem;
     margin: 40px 64px;
   }
- .undertitel, .text{
+ .undertitel, .text p{
   max-width: 60ch;
  }
 
   a {
     font-weight: 800;
   }
+
+  .text>p{
+    margin-bottom:1.2rem;
+  }
+.text p:last-child{
+  margin-top: 2.4rem;
+}
+
 
   .grid_1_1_1 {
     display: grid;
@@ -77,7 +87,7 @@ import Profilbillede from "../assets/img/profilbillede.webp";
       margin-left: 24px;
     }
     .undertitel {
-      margin-bottom: 1rem;
+      margin-bottom: 2.4rem;
     }
 
     .grid_1_1_1 {
