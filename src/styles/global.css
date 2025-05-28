@@ -42,15 +42,21 @@ p {
   line-height: 1.5em;
 }
 
-a{
+a {
   font-family: "Manrope", sans-serif;
   text-decoration: none;
   color: var(--primary-color);
 }
 
-section{
+section {
   margin: 40px 64px;
   place-items: center;
+}
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -63,14 +69,14 @@ main {
 
 /* Profilbillede af Mads */
 .profilbillede {
-    border: 3px solid var(--primary-color);
-    border-radius: 12px;
-    max-width: 400px;
-    margin: auto;
-  }
+  border: 3px solid var(--primary-color);
+  border-radius: 12px;
+  max-width: 400px;
+  margin: auto;
+}
 
 /* Fælles animationer */
-.underline-animation{
+.underline-animation {
   position: relative;
   display: inline-block;
 }
@@ -103,42 +109,41 @@ main {
 
 /* Understreg på h1 titler */
 .underline {
-    position: relative;
-    display: inline-block;
-    margin-top: 32px;
-    margin-bottom: 32px;
-    left: 50%;
-    transform: translateX(-50%);
-    padding-inline: 32px;
-  }
+  position: relative;
+  display: inline-block;
+  margin-top: 32px;
+  margin-bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding-inline: 32px;
+}
 
-  .underline:after {
-    content: "";
-    display: block;
-    height: 3px;
-    background-color: var(--primary-color);
-    border-radius: 12px;
-    margin-top: 8px;
-    width: 100%;
-  }
+.underline:after {
+  content: "";
+  display: block;
+  height: 3px;
+  background-color: var(--primary-color);
+  border-radius: 12px;
+  margin-top: 8px;
+  width: 100%;
+}
 
 /* Section Opdeler */
- .sectionline {
-      border: solid 1px var(--primary-color);
-    }
+.sectionline {
+  border: solid 1px var(--primary-color);
+}
 
-@media screen and (min-width:768px) {
-    main{
-        padding-inline:4vw
-      }
+@media screen and (min-width: 768px) {
+  main {
+    padding-inline: 4vw;
+  }
 
-    .sectionline{
-      margin-inline: 32px;
-      place-items: center;
-    }
+  .sectionline {
+    margin-inline: 32px;
+    place-items: center;
+  }
 
-    .profilbillede{
-      min-width: 290px;
-    }
-  
+  .profilbillede {
+    min-width: 290px;
+  }
 }
