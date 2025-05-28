@@ -51,6 +51,7 @@ const sortedYears = Object.keys(groupedByYear).sort((a, b) => b - a);
 </div>
 
 <style>
+
   h3 {
     font-size: 2rem;
   }
@@ -79,7 +80,7 @@ const sortedYears = Object.keys(groupedByYear).sort((a, b) => b - a);
     bottom: 0;
     left: 0;
     height: 2px;
-    width: 100%;
+    width:85vw ;
     background-color: var(--primary-color);
     box-shadow:
       0 0 6px var(--primary-color),
@@ -103,7 +104,7 @@ const sortedYears = Object.keys(groupedByYear).sort((a, b) => b - a);
     height: 390px;
     border-radius: 5px;
     overflow: hidden;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 10px var(--black-color);
     transition:
     box-shadow 0.3s ease,
     transform 0.3s ease;
@@ -165,6 +166,7 @@ const sortedYears = Object.keys(groupedByYear).sort((a, b) => b - a);
   }
 
   @media (min-width: 600px) {
+
     .card-row {
       flex-direction: row;
       scroll-snap-type: x mandatory;
