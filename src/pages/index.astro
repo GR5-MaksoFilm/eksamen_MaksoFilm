@@ -35,7 +35,7 @@ import Profilbillede from "../assets/img/profilbillede.webp";
 
   <hr class="sectionline" />
 
-  <section>
+  <section class="opgaven">
     <h2>MAKSOFILM løser opgaven</h2>
     <p>
       Et samarbejde med MAKSOFILM betyder en professionel videoproduktion og
@@ -48,7 +48,12 @@ import Profilbillede from "../assets/img/profilbillede.webp";
   <hr class="sectionline" />
 
   <section>
-    
+    <h2 class="insta">
+      Hold dig opdateret på <a
+        href="https://www.instagram.com/mads.krause/"
+        class="underline-animation">@maksofilm</a
+      >
+    </h2>
     <InstagramFeed />
   </section>
 </MainLayout>
@@ -89,8 +94,14 @@ import Profilbillede from "../assets/img/profilbillede.webp";
 
     .right-column {
       margin: 80px 64px 0;
+      text-align: center;
       grid-column: 2;
       grid-row: 1;
+    }
+
+    .opgaven {
+      margin: 80px 64px 0;
+      text-align: center;
     }
   }
 </style>
