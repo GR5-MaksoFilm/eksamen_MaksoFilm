@@ -48,11 +48,11 @@ import Arrow from "./src/assets/img/backarrow.svg";
   .grid_1_1 {
     display: grid;
     gap: 12px;
-    padding-inline: 16px;
     max-width: 100%;
     box-sizing: border-box;
     overflow-x: hidden;
   }
+
   .servicelink {
     display: flex;
     justify-content: space-between;
@@ -67,7 +67,11 @@ import Arrow from "./src/assets/img/backarrow.svg";
   }
   .button {
     background-color: var(--secondary-color);
-    padding: 8px 35px;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 8px 30px;
     border-radius: 8px;
     display: inline-flex;
     align-items: center;

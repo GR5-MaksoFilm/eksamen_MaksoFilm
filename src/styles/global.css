@@ -50,7 +50,7 @@ a {
 
 section {
   margin: 40px 64px;
-  place-items: center;
+  /* place-items: center; */
 }
 
 html,
