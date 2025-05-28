@@ -60,12 +60,11 @@ const sortedYears = Object.keys(groupedByYear).sort((a, b) => b - a);
     display: flex;
     flex-direction: column;
     gap: 32px;
-    margin: 32px 16px;
+    padding: 0 16px;
   }
 
   .year-group {
-    margin: 0 auto 48px;
-    width: 85vw;
+    margin-bottom: 48px;
   }
 
   .year-label {
@@ -73,7 +72,6 @@ const sortedYears = Object.keys(groupedByYear).sort((a, b) => b - a);
     margin-bottom: 16px;
     color: var(--primary-color);
     padding-bottom: 4px;
-    place-self: start;
   }
 
   .year-label::after {
@@ -108,10 +106,10 @@ const sortedYears = Object.keys(groupedByYear).sort((a, b) => b - a);
     overflow: hidden;
     box-shadow: 0 0 10px var(--black-color);
     transition:
-      box-shadow 0.3s ease,
-      transform 0.3s ease;
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
   }
-
+  
   .even .card {
     background-color: var(--primary-color);
     border: 1.5px solid var(--white-color);
@@ -149,7 +147,7 @@ const sortedYears = Object.keys(groupedByYear).sort((a, b) => b - a);
 
   .card-title {
     font-size: 1.8rem;
-    font-weight: bold;
+    font-weight: 600;
     margin: 0;
     color: var(--black-color);
   }
@@ -169,9 +167,6 @@ const sortedYears = Object.keys(groupedByYear).sort((a, b) => b - a);
 
   @media (min-width: 600px) {
 
-    .year-group{
-      place-items: start;
-    }
     .card-row {
       flex-direction: row;
       scroll-snap-type: x mandatory;
@@ -183,6 +178,9 @@ const sortedYears = Object.keys(groupedByYear).sort((a, b) => b - a);
       scroll-snap-align: start;
     }
 
+    .card-container {
+      padding: 0 64px;
+    }
 
     h3 {
       font-size: 2.4rem;

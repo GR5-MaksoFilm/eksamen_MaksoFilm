@@ -51,48 +51,48 @@ const { project } = Astro.props;
 
 <style>
   .info-container {
-    padding: 0 1rem;
+    padding: 0 16px;
   }
 
   .portfolio-center {
     display: flex;
     justify-content: center;
-    margin-top: 2rem;
+    margin-top: 32px;
   }
 
   .portfolio-title {
-    margin-bottom: 0.5rem;
+    margin-bottom: 8px;
     font-size: 3rem;
     text-align: center;
   }
 
   .portfolio-underline {
     height: 2px;
-    background-color: white;
+    background-color: var(--primary-color);
     width: 100%;
-    margin-bottom: 2rem;
+    margin-bottom: 32px;
   }
 
   h3 {
     font-size: 1.8rem;
     font-weight: 300;
-    margin-bottom: 2rem;
+    margin-bottom: 16px;
   }
 
   p {
     font-size: 1.2rem;
-    margin-bottom: 2rem;
-    line-height: 1.6;
+    margin-bottom: 32px;
+    line-height: 1.6em;
   }
 
   .watch-button-wrapper {
     text-align: center;
-    margin: 3rem 0 5rem;
+    margin: 48px 0 80px;
   }
 
   .watch-button {
     font-size: 1.8rem;
-    font-family: manrope;
+    font-family: var(--main-font);
     font-weight: bold;
     color: var(--primary-color);
     text-decoration: none;
@@ -110,13 +110,13 @@ const { project } = Astro.props;
     bottom: 0;
     left: 0;
     background-color: var(--primary-color);
-    transform-origin: bottom center;
+    transform-origin: bottom left;
     transition: transform 0.25s ease-out;
   }
 
   .watch-button:hover::after {
     transform: scaleX(1);
-    transform-origin: bottom center;
+    transform-origin: bottom left;
   }
 
   .image-wrapper {
@@ -125,7 +125,7 @@ const { project } = Astro.props;
     justify-content: center;
     align-items: center;
     max-width: 500px;
-    margin: 1.5rem auto 6rem;
+    margin: 24px auto 96px;
   }
 
   .project-image {
@@ -147,16 +147,16 @@ const { project } = Astro.props;
 
   @media (min-width: 768px) {
     .info-container {
-      margin: 0 4rem;
+      margin: 0 64px;
     }
 
     .portfolio-underline {
-      margin: 0 auto 2rem;
+      margin: 0 auto 32px;
     }
 
     .image-wrapper {
       min-width: 60%;
-      margin-bottom: 7rem;
+      margin-bottom: 112px;
     }
   }
 </style>
