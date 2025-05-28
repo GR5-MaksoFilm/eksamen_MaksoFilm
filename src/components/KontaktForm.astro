@@ -1,8 +1,8 @@
-<form class="formular">
+<form class="formular" aria-label="Kontaktformular">
   <input id="navn" name="navn_text" type="text" placeholder="Navn" />
   <input id="email" name="email" type="email" placeholder="Email" />
   <input id="tlf" name="tlf" type="tel" placeholder="Telefon" />
-  <select class="custom-select">
+  <select class="select">
     <option value="" disabled selected hidden>Jeg er interesseret i...</option>
     <option value="Filmoptagelse">Filmoptagelse</option>
     <option value="Podcast">Podcast</option>
@@ -12,29 +12,25 @@
   </select>
   <label for="besked">Fortæl lidt mere om dit projekt...</label>
   <textarea id="besked" name="besked"></textarea>
-  <button class="knap underline-animation">Send</button>
+  <button class="knap underline-animation" type="submit">Send</button>
 </form>
 
 <style>
-  body,
-  main {
-    margin: 0;
-    padding: 0;
-  }
   .formular {
-    background-color: rgba(147, 125, 166, 1);
+    background-color: var(--hover-color);
     display: flex;
     flex-direction: column;
-    gap: 1.8rem;
-    font-family: "Manrope", sans-serif;
+    gap: 30px;
+    font-family: var(--main-font);
     width: 100%;
-    max-width: 700px;
-    padding: 2.5rem;
+    max-width: 750px;
+    padding: 40px;
+    border-radius: 12px;
   }
 
   .formular input::placeholder,
   .formular textarea::placeholder {
-    font-family: "Manrope", sans-serif;
+    font-family: var(--main-font);
     color: black;
   }
 
@@ -47,17 +43,23 @@
     border-bottom: 2px solid var(--secondary-color);
   }
 
+  .formular label {
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+
   .formular input:focus,
   .formular textarea:focus {
     outline: none;
     box-shadow: none;
+    font-family: var(--main-font);
   }
-  .custom-select {
+  .select {
     background: none;
     font-size: 1rem;
-    padding-bottom: 0.8rem;
-    font-family: "Manrope", sans-serif;
-    font-size: 1rem;
+    padding-bottom: 12px;
+    font-family: var(--main-font);
+    font-size: 1.1rem;
     border: none;
 
     border-bottom: 2px solid var(--secondary-color);
@@ -67,50 +69,22 @@
     box-shadow: none;
     border-bottom: 2px solid var(--secondary-color);
   }
-  .knap {
-    background-color: var(--secondary-color);
-    border: none;
-    cursor: pointer;
-    padding: 1rem;
-    font-family: "Manrope", sans-serif;
-    font-size: 1.2rem;
-    color: var(--primary-color);
-    margin: auto;
-    padding: 0.2rem 3rem 0.2rem 3rem;
-  }
 
   .knap {
     background-color: var(--secondary-color);
     border: none;
     cursor: pointer;
-    padding: 1rem;
-    font-family: "Manrope", sans-serif;
+    font-family: var(--main-font);
     font-size: 1.2rem;
     color: var(--primary-color);
     margin: auto;
-    padding: 0.2rem 3rem 0.2rem 3rem;
+    padding: 4px 48px;
   }
 
-  .underline-animation {
-    position: relative;
-    display: inline-block;
+  @media screen and (min-width:975px){
+    .formular{
+      place-self: end;
+    }
   }
 
-  .underline-animation:after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: var(--primary-color);
-    transform-origin: bottom center;
-    transition: transform 0.25s ease-out;
-  }
-
-  .underline-animation:hover:after {
-    transform: scaleX(1);
-    transform-origin: bottom center;
-  }
 </style>

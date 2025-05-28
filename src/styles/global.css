@@ -8,8 +8,12 @@
   --black-color: #141414;
   --white-color: #fffafa;
 
+  --hover-color: #937da6;
+
   --main-font: "Manrope", sans-serif;
   --secondary-font: "Poltawski Nowy", sans-serif;
+
+  scroll-behavior: smooth;
 }
 
 h1,
@@ -35,7 +39,18 @@ p {
   font-family: var(--secondary-font);
   font-weight: 400;
   font-size: 1.2rem;
-  line-height: 1.7rem;
+  line-height: 1.5em;
+}
+
+a{
+  font-family: "Manrope", sans-serif;
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+section{
+  margin: 40px 64px;
+  place-items: center;
 }
 
 body {
@@ -43,7 +58,87 @@ body {
 }
 main {
   overflow: hidden;
+  padding-inline: 3vw;
 }
-* {
-  scroll-behavior: smooth;
+
+/* Profilbillede af Mads */
+.profilbillede {
+    border: 3px solid var(--primary-color);
+    border-radius: 12px;
+    max-width: 400px;
+    margin: auto;
+  }
+
+/* Fælles animationer */
+.underline-animation{
+  position: relative;
+  display: inline-block;
+}
+
+.underline-animation:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--primary-color);
+  transform-origin: bottom center;
+  transition: transform 0.25s ease-out;
+}
+
+.underline-animation:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom center;
+}
+
+/* Glow effekt i baggrunden */
+.glow {
+  position: relative;
+  z-index: -1;
+  pointer-events: none;
+  filter: blur(8px);
+}
+
+/* Understreg på h1 titler */
+.underline {
+    position: relative;
+    display: inline-block;
+    margin-top: 32px;
+    margin-bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-inline: 32px;
+  }
+
+  .underline:after {
+    content: "";
+    display: block;
+    height: 3px;
+    background-color: var(--primary-color);
+    border-radius: 12px;
+    margin-top: 8px;
+    width: 100%;
+  }
+
+/* Section Opdeler */
+ .sectionline {
+      border: solid 1px var(--primary-color);
+    }
+
+@media screen and (min-width:768px) {
+    main{
+        padding-inline:4vw
+      }
+
+    .sectionline{
+      margin-inline: 32px;
+      place-items: center;
+    }
+
+    .profilbillede{
+      min-width: 290px;
+    }
+  
 }

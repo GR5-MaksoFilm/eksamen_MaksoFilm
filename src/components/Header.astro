@@ -1,5 +1,5 @@
 ---
-import Logo from "../assets/MaksoFilm_Logo.svg";
+import Logo from "../assets/img/MaksoFilm_Logo.svg";
 ---
 
 <nav>
@@ -48,7 +48,6 @@ import Logo from "../assets/MaksoFilm_Logo.svg";
 
   nav > ul > li > a {
     color: var(--primary-color);
-    font-family: "Manrope", sans-serif;
     font-weight: 600;
     text-decoration: none;
     font-size: 1.5rem;
@@ -63,10 +62,14 @@ import Logo from "../assets/MaksoFilm_Logo.svg";
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    padding: 15px 15px 0;
-    margin-inline: auto;
-    gap: 2rem;
-    background-color: var(--background-color);
+    padding: 16px;
+    margin: 0 auto 32px;
+    gap: 16px;
+    background-image: linear-gradient(
+      to bottom,
+      var(--background-color) 85%,
+      transparent
+    );
     z-index: 10;
   }
 
@@ -198,25 +201,15 @@ import Logo from "../assets/MaksoFilm_Logo.svg";
     #burger {
       display: block;
     }
+
+     .underline-animation:after{
+      display: none;
+    }
   }
 
   @media screen and (min-width: 975px) {
-    .underline-animation:after {
-      content: "";
-      position: absolute;
-      width: 100%;
+    .underline-animation:after:hover{
       transform: scaleX(0);
-      height: 2px;
-      bottom: 0;
-      left: 0;
-      background-color: var(--primary-color);
-      transform-origin: bottom center;
-      transition: transform 0.25s ease-out;
-    }
-
-    .underline-animation:hover:after {
-      transform: scaleX(1);
-      transform-origin: bottom center;
     }
     #burger{
       display: none;
