@@ -1,13 +1,12 @@
 ---
 // @ts-nocheck
 const { project } = Astro.props;
+import { Image } from "astro:assets";
+import Glow from "../assets/img/glow.webp"
 ---
 
 <div class="info-container">
-  <div class="portfolio-center">
-    <h1 class="portfolio-title">{project.project_title}</h1>
-  </div>
-  <div class="portfolio-underline"></div>
+    <h1 class="portfolio-title underline">{project.project_title}</h1>
 
   <h2>{project.project_category}</h2>
   <h3>{project.project_h3}</h3>
@@ -39,12 +38,12 @@ const { project } = Astro.props;
       class="project-image"
       src={project.project_photo}
       alt={project.project_title}
-    />
-    <img
-      class="glow-background"
-      src="/src/assets/img/glow.webp"
-      alt=""
       aria-hidden="true"
+    />
+    <Image
+      class="glow"
+      src={Glow}
+      alt="Glow effekt"
     />
   </div>
 </div>
@@ -54,23 +53,11 @@ const { project } = Astro.props;
     padding: 0 16px;
   }
 
-  .portfolio-center {
-    display: flex;
-    justify-content: center;
-    margin-top: 32px;
-  }
 
   .portfolio-title {
     margin-bottom: 8px;
     font-size: 3rem;
     text-align: center;
-  }
-
-  .portfolio-underline {
-    height: 2px;
-    background-color: var(--primary-color);
-    width: 100%;
-    margin-bottom: 32px;
   }
 
   h3 {
@@ -101,23 +88,6 @@ const { project } = Astro.props;
     transition: color 0.2s ease;
   }
 
-  .watch-button::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: var(--primary-color);
-    transform-origin: bottom left;
-    transition: transform 0.25s ease-out;
-  }
-
-  .watch-button:hover::after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
-  }
 
   .image-wrapper {
     position: relative;
@@ -136,10 +106,10 @@ const { project } = Astro.props;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
 
-  .glow-background {
+  .glow {
     position: absolute;
     width: 140%;
-    transform: rotate(2.5deg);
+    rotate: 3deg;
     z-index: 0;
     pointer-events: none;
     opacity: 0.9;
