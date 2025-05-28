@@ -9,83 +9,88 @@ import Profilbillede from "../assets/img/profilbillede.webp";
 ---
 
 <MainLayout>
-<section>
-  <h1>MAKSOFILM</h1>
-  <h3>Din professionelle videopartner</h3>
-  <Showreel />
-</section>
+  <section>
+    <h1>MAKSOFILM</h1>
+    <h3>Din professionelle videopartner</h3>
+    <Showreel />
+  </section>
 
-<hr class="sectionline"></hr>
+  <hr class="sectionline" />
 
-<section class="grid_1_1">
+  <section class="grid_1_1">
     <h2 class="section-title">HVEM ER MAKSOFILM?</h2>
     <div class="left-column">
       <Image src={Profilbillede} class="profilbillede" alt="Profilbillede" />
     </div>
     <div class="right-column">
-      <p>MAKSOFILM er et film- og medieproduktionsselskab drevet af passion for den gode fortælling og det ærlige udtryk. Vi skaber visuelt stærke og følelsesladede film, der taler til både hjerte og tanke – uanset om det er dokumentarer, reklamer, musikvideoer eller kampagnefilm.</p>
+      <p>
+        MAKSOFILM er et film- og medieproduktionsselskab drevet af passion for
+        den gode fortælling og det ærlige udtryk. Vi skaber visuelt stærke og
+        følelsesladede film, der taler til både hjerte og tanke – uanset om det
+        er dokumentarer, reklamer, musikvideoer eller kampagnefilm.
+      </p>
       <ButtonPortfolio />
     </div>
-</section>
+  </section>
 
-<hr class="sectionline"></hr>
+  <hr class="sectionline" />
 
-<section>
+  <section>
     <h2>MAKSOFILM løser opgaven</h2>
-    <p>Et samarbejde med MAKSOFILM betyder en professionel videoproduktion og redigering. Vi samskaber og jeg kan sparre på og løse dine tanker. Lad os bringe dine ideer til live!</p>
+    <p>
+      Et samarbejde med MAKSOFILM betyder en professionel videoproduktion og
+      redigering. Vi samskaber og jeg kan sparre på og løse dine tanker. Lad os
+      bringe dine ideer til live!
+    </p>
     <FrontService />
   </section>
 
-  <hr class="sectionline"></hr>
-  
+  <hr class="sectionline" />
+
   <section>
     
     <InstagramFeed />
   </section>
-  </MainLayout>
+</MainLayout>
 
-  <style>
-    .right-column{
-      place-items: center;
-    }
-    .insta {
-      text-align: center;
-      margin-bottom: 24px;
-      letter-spacing: 1px;
-    }
+<style>
+  .right-column {
+    place-items: center;
+  }
+  .insta {
+    text-align: center;
+    margin-bottom: 24px;
+    letter-spacing: 1px;
+  }
+  .grid_1_1 {
+    display: grid;
+    gap: 24px;
+    margin: 24px 16px;
+    place-items: center;
+  }
+
+  @media (min-width: 768px) {
     .grid_1_1 {
       display: grid;
-      gap: 24px;
-      margin: 24px 16px;
-      place-items: center;
+      grid-template-columns: 1fr 2fr;
+      gap: 32px;
+      align-items: start;
+      margin: 40px 64px;
     }
-   
-    
-    @media (min-width: 768px) {
-      .grid_1_1 {
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-        gap: 32px;
-        align-items: start;
-        margin: 40px 64px;
-      }
-      
-      .section-title{
-        grid-column: 2;
-        grid-row: 1;
-      }
-      .profilbillede{
+
+    .section-title {
+      grid-column: 2;
+      grid-row: 1;
+    }
+    .profilbillede {
       grid-column: 1;
       grid-row: 1;
-      }
-      
-      .right-column{
-        margin: 80px 64px 0;
-        text-align: center;
-        grid-column: 2;
-        grid-row: 1;
-      }
-    
     }
-  </style>
 
+    .right-column {
+      margin: 80px 64px 0;
+      grid-column: 2;
+      grid-row: 1;
+    }
+  }
+</style>
