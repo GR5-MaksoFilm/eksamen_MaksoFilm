@@ -10,5 +10,11 @@ footer > * {
 }
 
 main {
-  padding-inline: 2rem;
+  overflow: hidden;
+  padding-inline: 3vw;
 }
+
+@media screen and (min-width:768px) {
+  main{
+      padding-inline:4vw
+    }}

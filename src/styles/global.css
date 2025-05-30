@@ -55,11 +55,9 @@ section{
 
 body {
   background-color: var(--background-color);
+  overflow-x: scroll;
 }
-main {
-  overflow: hidden;
-  padding-inline: 3vw;
-}
+
 
 /* Profilbillede af Mads */
 .profilbillede {
@@ -128,9 +126,6 @@ main {
     }
 
 @media screen and (min-width:768px) {
-    main{
-        padding-inline:4vw
-      }
 
     .sectionline{
       margin-inline: 32px;
