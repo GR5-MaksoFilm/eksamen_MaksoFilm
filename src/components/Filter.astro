@@ -1,0 +1,76 @@
+---
+// @ts-nocheck
+const url =
+  "https://uhcutojnbibslmplbwqd.supabase.co/rest/v1/Portfolio?select=*";
+const key =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVoY3V0b2puYmlic2xtcGxid3FkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDc3Mjc5NTcsImV4cCI6MjA2MzMwMzk1N30.gUKjETMs5zvXh4Hhw059erhs-V19eoJSiUCNXidk-V0";
+
+let rawData = [];
+
+await (async () => {
+  const res = await fetch(url, {
+    headers: {
+      apikey: key,
+      Authorization: `Bearer ${key}`,
+    },
+  });
+  rawData = await res.json();
+})();
+---
+
+<div class="center-container">
+  <h2>Kategorier</h2>
+  <div class="button-grid">
+    {
+      [
+        ...new Map(
+          rawData.map((item) => [item.project_category, item]),
+        ).values(),
+      ].map((item) => <button>{item.project_category}</button>)
+    }
+  </div>
+</div>
+
+<style>
+  .center-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .button-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  button {
+    width: 130px;
+    height: 50px;
+    font-family: manrope;
+    font-weight: bold;
+    font-size: 1rem;
+    background-color: var(--hover-color);
+    padding: 10px 15px;
+    border-radius: 0.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition:
+      background-color 0.2s ease,
+      transform 0.2s ease;
+    text-align: center;
+  }
+
+  button:hover {
+    transform: scale(1.05);
+    background-color: var(--primary-color);
+  }
+</style>

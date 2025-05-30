@@ -12,7 +12,6 @@ import Profilbillede from "../assets/img/profilbillede.webp";
   <section>
     <h1>MAKSOFILM</h1>
     <h3>Din professionelle videopartner</h3>
-    <Showreel />
   </section>
 
   <hr class="sectionline" />
@@ -29,13 +28,13 @@ import Profilbillede from "../assets/img/profilbillede.webp";
         følelsesladede film, der taler til både hjerte og tanke – uanset om det
         er dokumentarer, reklamer, musikvideoer eller kampagnefilm.
       </p>
-      <ButtonPortfolio />
+      <ButtonPortfolio class="buttonportfolio" />
     </div>
   </section>
 
   <hr class="sectionline" />
-
-  <section>
+  <Showreel class="showreel" />
+  <section class="opgaven">
     <h2>MAKSOFILM løser opgaven</h2>
     <p>
       Et samarbejde med MAKSOFILM betyder en professionel videoproduktion og
@@ -48,14 +47,21 @@ import Profilbillede from "../assets/img/profilbillede.webp";
   <hr class="sectionline" />
 
   <section>
-    
     <InstagramFeed />
   </section>
 </MainLayout>
 
 <style>
+  h1,
+  h3 {
+    text-align: center;
+  }
   .right-column {
     place-items: center;
+  }
+
+  .right-column p {
+    padding: 2rem;
   }
   .insta {
     text-align: center;
@@ -69,6 +75,9 @@ import Profilbillede from "../assets/img/profilbillede.webp";
     place-items: center;
   }
 
+  .opgaven {
+    margin: 2rem;
+  }
   @media (min-width: 768px) {
     .grid_1_1 {
       display: grid;
