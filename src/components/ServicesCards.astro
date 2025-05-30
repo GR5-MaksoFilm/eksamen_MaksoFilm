@@ -22,17 +22,18 @@ const services = [
   },
 ];
 ---
-
-<div class="card-container">
-  {
-    services.map((service) => (
-      <div class="card">
+<a href="/construction">
+  <div class="card-container">
+    {
+      services.map((service) => (
+        <div class="card">
         <h2>{service.title}</h2>
         <p>{service.description}</p>
       </div>
     ))
   }
 </div>
+</a>
 
 <style>
   /* (text above the cards) */
