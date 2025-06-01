@@ -50,24 +50,3 @@ Der arbejdes i Astro og derfor bruger vi også Astros egen filstruktur med vores
 
 - Key:
   eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVoY3V0b2puYmlic2xtcGxid3FkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDc3Mjc5NTcsImV4cCI6MjA2MzMwMzk1N30.gUKjETMs5zvXh4Hhw059erhs-V19eoJSiUCNXidk-V0
-
-
-  /////////////////////////////////////////////////////////////////////////////////
-
-# Dokumentation af Funktion
-
-Dette afsnit skal beskrive en funktion I selv har udviklet. Det kunne eksempelvis være en funktion der generere en listen over fx. produkter:
-
-- Beskrivelse: Hvad gør funktionen? Hvordan spiller den sammen med resten af koden?
-- Parametre: Hvilke input forventes (fx en værdi fra en dropdown eller URL'en)?
-- Returnerer: Beskriv, om funktionen returnerer en værdi eller blot manipulerer DOM’en.
-- Eksempel på brug: Indsæt funktions-koden herunder(der hvor koden er i eksemplet) og vis, hvordan funktionen kaldes:
-
-```javascript
-//funktionens kode:
-function voresFunktion(sprog) {
-  console.log(`${sprog} syntax highlighting`);
-}
-//hvordan funktionen kaldes:
-voresFunktion("JavaScript");
-```
