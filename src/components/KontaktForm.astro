@@ -1,7 +1,7 @@
 <form class="formular" aria-label="Kontaktformular">
-  <input id="navn" name="navn_text" type="text" placeholder="Navn" />
-  <input id="email" name="email" type="email" placeholder="Email" />
-  <input id="tlf" name="tlf" type="tel" placeholder="Telefon" />
+  <input id="navn" name="navn_text" type="text" placeholder="Navn" required/>
+  <input id="email" name="email" type="email" placeholder="E-mail" required/>
+  <input id="tlf" name="tlf" type="tel" placeholder="Telefon" required/>
   <select class="select">
     <option value="" disabled selected hidden>Jeg er interesseret i...</option>
     <option value="Filmoptagelse">Filmoptagelse</option>
@@ -10,8 +10,10 @@
     <option value="Redigering">Redigering</option>
     <option value="Andet">Andet</option>
   </select>
-  <label for="besked">Fortæl lidt mere om dit projekt...</label>
-  <textarea id="besked" name="besked"></textarea>
+  <div>
+    <label for="besked">Fortæl mig om dit projekt!</label>
+    <span id="besked" role="textbox" contenteditable autocapitalize="sentences"></span>
+  </div>
   <button class="knap underline-animation" type="submit">Send</button>
 </form>
 
@@ -31,7 +33,7 @@
   .formular input::placeholder,
   .formular textarea::placeholder {
     font-family: var(--main-font);
-    color: black;
+    color: var(--black-color);
   }
 
   .formular input,
@@ -49,7 +51,7 @@
   }
 
   .formular input:focus,
-  .formular textarea:focus {
+  .formular textarea:focus, #besked:focus {
     outline: none;
     box-shadow: none;
     font-family: var(--main-font);
@@ -70,6 +72,22 @@
     border-bottom: 2px solid var(--secondary-color);
   }
 
+  #besked {
+ display: block;
+ width: 100%;
+ overflow: hidden;
+ resize: both;
+ line-height: 1.5em;
+ border-bottom: 2px solid var(--secondary-color);
+ font-size: 1.1rem;
+ font-family: var(--main-font);
+ margin-top: .75em;
+}
+#besked[contenteditable]:empty::before {
+  content: "Skriv her...";
+  color: var(--black-color);
+}
+
   .knap {
     background-color: var(--secondary-color);
     border: none;
@@ -80,6 +98,7 @@
     margin: auto;
     padding: 4px 48px;
   }
+
 
   @media screen and (min-width: 975px) {
     .formular {
