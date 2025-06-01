@@ -73,6 +73,7 @@ main {
   border-radius: 12px;
   max-width: 400px;
   margin: auto;
+  aspect-ratio: 500/610;
 }
 
 /* Fælles animationer */
