@@ -38,6 +38,15 @@ import Form from "../components/KontaktForm.astro";
     font-size: 1.75rem;
   }
 
+  @media screen and (max-width: 975px) { 
+    section{
+      margin: 0;
+    }
+    .info{
+      margin: 40px 64px;
+    }
+  }
+
   @media (min-width: 975px) {
     .grid_1_1_kontakt {
       display: grid;
@@ -56,5 +65,6 @@ import Form from "../components/KontaktForm.astro";
       margin-bottom: 0;
       max-width: 400px;
     }
+    
   }
 </style>
