@@ -1,39 +1,40 @@
 ---
+import Slug from "../pages/portfolio/[slug].astro";
+
 const services = [
   {
     title: "Filmproduktion",
-    description:
-      "Skab professionelle videoer, der engagerer og imponerer. Vi hjælper dig hele vejen.",
+    description: "Skab professionelle videoer, der engagerer og imponerer. Vi hjælper dig hele vejen.",
+    slug: "filmproduktion",
   },
   {
     title: "Videooptagelser",
-    description:
-      "Få din video filmet, klippet og mastereret, så den er klar til lige den platform du ønsker.",
+    description: "Få din video filmet, klippet og mastereret, så den er klar til lige den platform du ønsker.",
+    slug: "videooptagelser",
   },
   {
     title: "Podcast",
-    description:
-      "Få optaget din podcast med eller uden billede. Jeg har udstyret og viden til at få dig i mål.",
+    description: "Få optaget din podcast med eller uden billede. Jeg har udstyret og viden til at få dig i mål.",
+    slug: "podcast",
   },
   {
     title: "Livestream",
-    description:
-      "Jeg kan lave et fuldt flerkamera livestreamsetup, så du kan komme ud til dine kunder.",
+    description: "Jeg kan lave et fuldt flerkamera livestreamsetup, så du kan komme ud til dine kunder.",
+    slug: "livestream",
   },
 ];
 ---
-<a href="/construction">
-  <div class="card-container">
-    {
-      services.map((service) => (
-        <div class="card">
+
+<div class="card-container">
+  {
+    services.map((service) => (
+      <a href={`/services/${service.slug}`} class="card">
         <h2>{service.title}</h2>
         <p>{service.description}</p>
-      </div>
+      </a>
     ))
   }
 </div>
-</a>
 
 <style>
   /* (text above the cards) */
@@ -113,7 +114,7 @@ const services = [
     .card {
       width: 450px;
       height: 240px;
-      padding: 32px ;
+      padding: 32px;
     }
 
     .card h2 {
@@ -123,6 +124,5 @@ const services = [
     .card p {
       font-size: 1.5rem;
     }
-
   }
 </style>
