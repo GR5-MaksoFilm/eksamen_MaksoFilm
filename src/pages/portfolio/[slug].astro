@@ -6,8 +6,7 @@ import MainLayout from "../../layouts/MainLayout.astro";
 import ButtonBack from "../../components/ButtonBack.astro";
 
 export async function getStaticPaths() {
-  const url =
-    "https://uhcutojnbibslmplbwqd.supabase.co/rest/v1/Portfolio?select=project_slug";
+  const url = "https://uhcutojnbibslmplbwqd.supabase.co/rest/v1/Portfolio?select=project_slug";
   const key =
     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVoY3V0b2puYmlic2xtcGxid3FkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDc3Mjc5NTcsImV4cCI6MjA2MzMwMzk1N30.gUKjETMs5zvXh4Hhw059erhs-V19eoJSiUCNXidk-V0";
 
@@ -50,7 +49,7 @@ const project = data[0];
 ---
 
 <MainLayout>
-  <ButtonBack />
+  <ButtonBack href="/portfolio" />
   <CardSingle project={project} />
   <ButtonBack />
 </MainLayout>
