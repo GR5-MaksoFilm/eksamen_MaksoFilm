@@ -1,0 +1,47 @@
+---
+// @ts-nocheck
+import MainLayout from "../../layouts/MainLayout.astro";
+import ButtonBack from "../../components/ButtonBack.astro";
+
+export async function getStaticPaths() {
+  return [{ params: { service: "filmproduktion" } }, { params: { service: "videooptagelser" } }, { params: { service: "podcast" } }, { params: { service: "livestream" } }];
+}
+const { service } = Astro.params;
+
+const data = {
+  filmproduktion: {
+    title: "Filmproduktion",
+    description: "Her kan du skrive mere om filmproduktion.",
+  },
+  videooptagelser: {
+    title: "Videooptagelser",
+    description:
+      "Med professionelle videooptagelser får du levende billeder, der formidler dit budskab klart og engagerende. Jeg tilbyder alt fra planlægning og optagelse til redigering og færdiggørelse, så du får en video, der passer præcis til dine behov. Uanset om det er til sociale medier, virksomhedspræsentationer eller events, sørger jeg for høj kvalitet og et resultat, der skiller sig ud. Jeg arbejder tæt sammen med dig gennem hele processen. Du får tryghed, kreativ sparring og et produkt, du kan være stolt af. Lad mig hjælpe dig med at gøre dine idéer til virkelighed gennem kreative og professionelle videooptagelser.",
+  },
+  podcast: {
+    title: "Podcast",
+    description: "Her kan du skrive mere om podcast.",
+  },
+  livestream: {
+    title: "Livestream",
+    description:
+      "Her kan du skrive mere om livestream.Her kan du skrive mere om livestream.Her kan du skrive mere om livestream.Her kan du skrive mere om livestream.Her kan du skrive mere om livestream.Her kan du skrive mere om livestream.Her kan du skrive mere om livestream.Her kan du skrive mere om livestream.Her kan du skrive mere om livestream.Her kan du skrive mere om livestream.Her kan du skrive mere om livestream.Her kan du skrive mere om livestream.Her kan du skrive mere om livestream.Her kan du skrive mere om livestream.Her kan du skrive mere om livestream.",
+  },
+};
+---
+
+<MainLayout>
+  <ButtonBack href="/services" />
+  {
+    data[service] ? (
+      <section class="service-detail">
+        <h1>{data[service].title}</h1>
+        <p>{data[service].description}</p>
+      </section>
+    ) : (
+      <p>Service ikke fundet.</p>
+    )
+  }
+</MainLayout>
+
+<style></style>
